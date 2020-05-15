@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <device id="ipad11_0rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,17 +12,17 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Plot_Helper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="123" translatesAutoresizingMaskIntoConstraints="NO" id="gCx-ll-bxN">
-                                <rect key="frame" x="20" y="20" width="728" height="769"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="188" translatesAutoresizingMaskIntoConstraints="NO" id="gCx-ll-bxN">
+                                <rect key="frame" x="20" y="20" width="794" height="964"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eIY-GP-8cU">
-                                        <rect key="frame" x="0.0" y="0.0" width="728" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="794" height="100"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dpL-th-lfr">
-                                                <rect key="frame" x="17" y="61" width="695" height="32"/>
+                                                <rect key="frame" x="17" y="61" width="761" height="32"/>
                                                 <segments>
                                                     <segment title="1"/>
                                                     <segment title="2"/>
@@ -35,7 +35,7 @@
                                                 </segments>
                                             </segmentedControl>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Plot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDv-dx-JV3">
-                                                <rect key="frame" x="279" y="0.0" width="170" height="41"/>
+                                                <rect key="frame" x="312" y="0.0" width="170" height="41"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="170" id="V5u-p9-QR8"/>
                                                     <constraint firstAttribute="height" constant="41" id="cea-Ss-Jmo"/>
@@ -56,10 +56,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zpR-1w-FCn">
-                                        <rect key="frame" x="0.0" y="223" width="728" height="100"/>
+                                        <rect key="frame" x="0.0" y="288" width="794" height="100"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1Eu-5c-AXq">
-                                                <rect key="frame" x="17" y="61" width="695" height="32"/>
+                                                <rect key="frame" x="17" y="61" width="761" height="32"/>
                                                 <segments>
                                                     <segment title="N"/>
                                                     <segment title="NE"/>
@@ -72,7 +72,7 @@
                                                 </segments>
                                             </segmentedControl>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Direction" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COD-56-67D">
-                                                <rect key="frame" x="238.5" y="0.0" width="251.5" height="41"/>
+                                                <rect key="frame" x="271.5" y="0.0" width="251.5" height="41"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="41" id="W7g-Bw-EeS"/>
                                                     <constraint firstAttribute="width" constant="251.5" id="mCx-Lr-QFn"/>
@@ -93,10 +93,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eSw-eh-O11">
-                                        <rect key="frame" x="0.0" y="446" width="728" height="100"/>
+                                        <rect key="frame" x="0.0" y="576" width="794" height="100"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XhA-oA-Pob">
-                                                <rect key="frame" x="17" y="61" width="695" height="32"/>
+                                                <rect key="frame" x="17" y="61" width="761" height="32"/>
                                                 <segments>
                                                     <segment title="5m"/>
                                                     <segment title="15m"/>
@@ -109,7 +109,7 @@
                                                 </segments>
                                             </segmentedControl>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Distance From Pole" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3d8-ec-vYg">
-                                                <rect key="frame" x="158.5" y="0.0" width="411.5" height="41"/>
+                                                <rect key="frame" x="191.5" y="0.0" width="411.5" height="41"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="411.5" id="3jO-O0-bFL"/>
                                                 </constraints>
@@ -129,10 +129,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0xu-se-TXX">
-                                        <rect key="frame" x="0.0" y="669" width="728" height="100"/>
+                                        <rect key="frame" x="0.0" y="864" width="794" height="100"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Gq3-5L-r56">
-                                                <rect key="frame" x="17" y="61" width="695" height="32"/>
+                                                <rect key="frame" x="17" y="61" width="761" height="32"/>
                                                 <segments>
                                                     <segment title="0%"/>
                                                     <segment title="25%"/>
@@ -142,7 +142,7 @@
                                                 </segments>
                                             </segmentedControl>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Cheatgrass Cover" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rN3-Jd-FTz">
-                                                <rect key="frame" x="168" y="0.0" width="392" height="41"/>
+                                                <rect key="frame" x="201" y="0.0" width="392" height="41"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="392" id="xBW-An-r1L"/>
                                                 </constraints>
@@ -164,7 +164,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGc-cN-bKp">
-                                <rect key="frame" x="471" y="871" width="277" height="133"/>
+                                <rect key="frame" x="537" y="1021" width="277" height="133"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="277" id="41z-Ie-G6O"/>
                                     <constraint firstAttribute="height" constant="133" id="qOm-q0-i9D"/>
@@ -172,31 +172,44 @@
                                 <state key="normal" title="Get" image="Get"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0v1-P9-IHI">
-                                <rect key="frame" x="20" y="871" width="277" height="133"/>
+                                <rect key="frame" x="20" y="1021" width="277" height="133"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="277" id="eq4-ex-ZNa"/>
                                     <constraint firstAttribute="height" constant="133" id="jw1-fL-gfF"/>
                                 </constraints>
                                 <state key="normal" title="Add/Edit" image="Add"/>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gkL-0S-7mT">
+                                <rect key="frame" x="392.5" y="1086" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto-Move" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zuv-62-8Go">
+                                <rect key="frame" x="374.5" y="1057.5" width="85" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0v1-P9-IHI" secondAttribute="bottom" constant="20" id="460-J0-YKa"/>
+                            <constraint firstItem="gkL-0S-7mT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6hH-r2-JQ3"/>
+                            <constraint firstItem="gkL-0S-7mT" firstAttribute="top" secondItem="Zuv-62-8Go" secondAttribute="bottom" constant="8" id="6ub-4N-qiz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eGc-cN-bKp" secondAttribute="trailing" constant="20" id="IA4-LM-cGl"/>
+                            <constraint firstItem="Zuv-62-8Go" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LQe-SQ-inJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gCx-ll-bxN" secondAttribute="bottom" constant="190" id="Yq1-tx-WDE"/>
                             <constraint firstItem="0v1-P9-IHI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ZvL-nu-15F"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gkL-0S-7mT" secondAttribute="bottom" constant="57" id="bEl-8X-gtY"/>
                             <constraint firstItem="gCx-ll-bxN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="bcD-B2-dqy"/>
                             <constraint firstItem="gCx-ll-bxN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="gbU-gf-Js5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gCx-ll-bxN" secondAttribute="trailing" constant="20" id="rXJ-zJ-56p"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eGc-cN-bKp" secondAttribute="bottom" constant="20" id="s4d-so-ZSU"/>
-                            <constraint firstItem="0v1-P9-IHI" firstAttribute="top" secondItem="gCx-ll-bxN" secondAttribute="bottom" constant="82" id="utl-DK-jFu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138.28125" y="109.5703125"/>
+            <point key="canvasLocation" x="138.12949640287772" y="109.54773869346734"/>
         </scene>
     </scenes>
     <resources>
