@@ -15,8 +15,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="188" translatesAutoresizingMaskIntoConstraints="NO" id="gCx-ll-bxN">
-                                <rect key="frame" x="20" y="20" width="794" height="964"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="111" translatesAutoresizingMaskIntoConstraints="NO" id="gCx-ll-bxN">
+                                <rect key="frame" x="20" y="20" width="794" height="979"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eIY-GP-8cU">
                                         <rect key="frame" x="0.0" y="0.0" width="794" height="100"/>
@@ -33,6 +33,9 @@
                                                     <segment title="7"/>
                                                     <segment title="8"/>
                                                 </segments>
+                                                <connections>
+                                                    <action selector="plotChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="HNv-QG-NU0"/>
+                                                </connections>
                                             </segmentedControl>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Plot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDv-dx-JV3">
                                                 <rect key="frame" x="312" y="0.0" width="170" height="41"/>
@@ -56,7 +59,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zpR-1w-FCn">
-                                        <rect key="frame" x="0.0" y="288" width="794" height="100"/>
+                                        <rect key="frame" x="0.0" y="211" width="794" height="100"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="1Eu-5c-AXq">
                                                 <rect key="frame" x="17" y="61" width="761" height="32"/>
@@ -70,6 +73,9 @@
                                                     <segment title="W"/>
                                                     <segment title="NW"/>
                                                 </segments>
+                                                <connections>
+                                                    <action selector="directionChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="V0Z-41-CrT"/>
+                                                </connections>
                                             </segmentedControl>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Direction" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COD-56-67D">
                                                 <rect key="frame" x="271.5" y="0.0" width="251.5" height="41"/>
@@ -93,7 +99,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eSw-eh-O11">
-                                        <rect key="frame" x="0.0" y="576" width="794" height="100"/>
+                                        <rect key="frame" x="0.0" y="422" width="794" height="100"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XhA-oA-Pob">
                                                 <rect key="frame" x="17" y="61" width="761" height="32"/>
@@ -107,6 +113,9 @@
                                                     <segment title="65m"/>
                                                     <segment title="75m"/>
                                                 </segments>
+                                                <connections>
+                                                    <action selector="distanceChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="3qj-Wv-o2f"/>
+                                                </connections>
                                             </segmentedControl>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Distance From Pole" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3d8-ec-vYg">
                                                 <rect key="frame" x="191.5" y="0.0" width="411.5" height="41"/>
@@ -129,7 +138,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0xu-se-TXX">
-                                        <rect key="frame" x="0.0" y="864" width="794" height="100"/>
+                                        <rect key="frame" x="0.0" y="633" width="794" height="100"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Gq3-5L-r56">
                                                 <rect key="frame" x="17" y="61" width="761" height="32"/>
@@ -140,6 +149,9 @@
                                                     <segment title="75%"/>
                                                     <segment title="100%"/>
                                                 </segments>
+                                                <connections>
+                                                    <action selector="coverChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="joX-la-9h2"/>
+                                                </connections>
                                             </segmentedControl>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Cheatgrass Cover" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rN3-Jd-FTz">
                                                 <rect key="frame" x="201" y="0.0" width="392" height="41"/>
@@ -153,12 +165,58 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="3UI-4n-5cZ"/>
                                             <constraint firstItem="Gq3-5L-r56" firstAttribute="top" secondItem="rN3-Jd-FTz" secondAttribute="bottom" constant="20" id="HDa-gP-57x"/>
                                             <constraint firstItem="Gq3-5L-r56" firstAttribute="leading" secondItem="0xu-se-TXX" secondAttribute="leading" constant="17" id="aqm-8K-b6l"/>
                                             <constraint firstItem="rN3-Jd-FTz" firstAttribute="centerX" secondItem="0xu-se-TXX" secondAttribute="centerX" id="gEc-0H-r7D"/>
                                             <constraint firstAttribute="trailing" secondItem="Gq3-5L-r56" secondAttribute="trailing" constant="16" id="rrc-Cu-P1A"/>
                                             <constraint firstAttribute="bottom" secondItem="Gq3-5L-r56" secondAttribute="bottom" constant="8" id="uht-TV-v5S"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dng-sJ-1qA">
+                                        <rect key="frame" x="0.0" y="844" width="794" height="135"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Cheatgrass Cover" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQo-3q-ucQ">
+                                                <rect key="frame" x="201" y="0.0" width="392" height="41"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="392" id="9Gj-8u-E0g"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pnp-uk-AGn">
+                                                <rect key="frame" x="332" y="73" width="97" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="97" id="QCc-j2-5AC"/>
+                                                    <constraint firstAttribute="height" constant="34" id="kBh-P5-OeU"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="inputEdited:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="MCk-MS-Knb"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXh-cQ-Zvc">
+                                                <rect key="frame" x="437" y="79.5" width="26" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="8JZ-Av-pBg"/>
+                                                    <constraint firstAttribute="width" constant="26" id="yvs-ZB-qM5"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="TQo-3q-ucQ" firstAttribute="centerX" secondItem="dng-sJ-1qA" secondAttribute="centerX" id="4Ro-XR-7ap"/>
+                                            <constraint firstAttribute="height" constant="135" id="Cu8-IP-nmH"/>
+                                            <constraint firstItem="PXh-cQ-Zvc" firstAttribute="centerY" secondItem="pnp-uk-AGn" secondAttribute="centerY" id="hzk-Ju-PhC"/>
+                                            <constraint firstItem="PXh-cQ-Zvc" firstAttribute="leading" secondItem="pnp-uk-AGn" secondAttribute="trailing" constant="8" id="ie7-7E-SSh"/>
+                                            <constraint firstItem="pnp-uk-AGn" firstAttribute="centerX" secondItem="TQo-3q-ucQ" secondAttribute="centerX" constant="-16.5" id="pJD-y0-whb"/>
+                                            <constraint firstItem="pnp-uk-AGn" firstAttribute="top" secondItem="TQo-3q-ucQ" secondAttribute="bottom" constant="32" id="q6K-zC-7BX"/>
+                                            <constraint firstAttribute="bottom" secondItem="pnp-uk-AGn" secondAttribute="bottom" constant="28" id="tFc-RX-n0j"/>
+                                            <constraint firstItem="pnp-uk-AGn" firstAttribute="top" secondItem="TQo-3q-ucQ" secondAttribute="bottom" constant="32" id="uYu-7Q-jOg"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -181,34 +239,71 @@
                                     <constraint firstAttribute="height" constant="133" id="jw1-fL-gfF"/>
                                 </constraints>
                                 <state key="normal" title="Add/Edit" image="Add"/>
+                                <connections>
+                                    <action selector="addEditPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pXH-e7-Ee6"/>
+                                </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gkL-0S-7mT">
-                                <rect key="frame" x="392.5" y="1086" width="51" height="31"/>
+                                <rect key="frame" x="392.5" y="1050" width="51" height="31"/>
+                                <connections>
+                                    <action selector="autoSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="sHh-4A-73R"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto-Move" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zuv-62-8Go">
-                                <rect key="frame" x="374.5" y="1057.5" width="85" height="20.5"/>
+                                <rect key="frame" x="374.5" y="1021.5" width="85" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fractional Value" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4YT-yN-w4H">
+                                <rect key="frame" x="356" y="1094.5" width="122" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RzQ-sl-oij">
+                                <rect key="frame" x="344" y="1123" width="146" height="32"/>
+                                <segments>
+                                    <segment title="Off"/>
+                                    <segment title="Both"/>
+                                    <segment title="On"/>
+                                </segments>
+                                <connections>
+                                    <action selector="fractionalChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="szS-sZ-xvE"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0v1-P9-IHI" secondAttribute="bottom" constant="20" id="460-J0-YKa"/>
                             <constraint firstItem="gkL-0S-7mT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6hH-r2-JQ3"/>
                             <constraint firstItem="gkL-0S-7mT" firstAttribute="top" secondItem="Zuv-62-8Go" secondAttribute="bottom" constant="8" id="6ub-4N-qiz"/>
+                            <constraint firstItem="4YT-yN-w4H" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="84P-wB-177"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eGc-cN-bKp" secondAttribute="trailing" constant="20" id="IA4-LM-cGl"/>
                             <constraint firstItem="Zuv-62-8Go" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LQe-SQ-inJ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gCx-ll-bxN" secondAttribute="bottom" constant="190" id="Yq1-tx-WDE"/>
+                            <constraint firstItem="RzQ-sl-oij" firstAttribute="top" secondItem="4YT-yN-w4H" secondAttribute="bottom" constant="8" id="PzM-hv-yd5"/>
+                            <constraint firstItem="4YT-yN-w4H" firstAttribute="top" secondItem="gkL-0S-7mT" secondAttribute="bottom" constant="13.5" id="UPo-Jc-KJX"/>
                             <constraint firstItem="0v1-P9-IHI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ZvL-nu-15F"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gkL-0S-7mT" secondAttribute="bottom" constant="57" id="bEl-8X-gtY"/>
                             <constraint firstItem="gCx-ll-bxN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="bcD-B2-dqy"/>
                             <constraint firstItem="gCx-ll-bxN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="gbU-gf-Js5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gCx-ll-bxN" secondAttribute="trailing" constant="20" id="rXJ-zJ-56p"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eGc-cN-bKp" secondAttribute="bottom" constant="20" id="s4d-so-ZSU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RzQ-sl-oij" secondAttribute="bottom" constant="20" id="u31-4a-Sfg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gCx-ll-bxN" secondAttribute="bottom" constant="175" id="vHI-wP-bV5"/>
+                            <constraint firstItem="RzQ-sl-oij" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xRe-z3-5d3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="addEdit" destination="0v1-P9-IHI" id="HSD-54-2rG"/>
+                        <outlet property="autoSwitch" destination="gkL-0S-7mT" id="wM7-IN-tI2"/>
+                        <outlet property="cover" destination="Gq3-5L-r56" id="cA5-Re-xeN"/>
+                        <outlet property="direction" destination="1Eu-5c-AXq" id="H6R-kM-oI9"/>
+                        <outlet property="distance" destination="XhA-oA-Pob" id="YtE-aU-xlk"/>
+                        <outlet property="fractional" destination="RzQ-sl-oij" id="10B-zK-6vE"/>
+                        <outlet property="input" destination="pnp-uk-AGn" id="Wuu-7W-4gr"/>
+                        <outlet property="plot" destination="dpL-th-lfr" id="ECJ-hJ-jth"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
