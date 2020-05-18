@@ -17,4 +17,5 @@ class storage: NSObject {
         var column: Int
         var cover: Int
     }
+    static var listOfPoints = [point]()
 }
