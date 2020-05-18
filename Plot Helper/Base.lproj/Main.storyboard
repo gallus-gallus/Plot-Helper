@@ -161,6 +161,9 @@
                                                     <segment title="Row 4"/>
                                                     <segment title="Row 5"/>
                                                 </segments>
+                                                <connections>
+                                                    <action selector="rowChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="t2d-G2-JFu"/>
+                                                </connections>
                                             </segmentedControl>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="HZH-ZF-sd6">
                                                 <rect key="frame" x="414" y="61" width="372" height="32"/>
@@ -174,6 +177,9 @@
                                                     <segment title="Col 4"/>
                                                     <segment title="Col 5"/>
                                                 </segments>
+                                                <connections>
+                                                    <action selector="columnChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="yVa-b9-0pH"/>
+                                                </connections>
                                             </segmentedControl>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -208,6 +214,9 @@
                                                     <segment title="Cheatgrass Litter"/>
                                                     <segment title="Bare Soil"/>
                                                 </segments>
+                                                <connections>
+                                                    <action selector="coverChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="eZj-CC-Lxr"/>
+                                                </connections>
                                             </segmentedControl>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -240,7 +249,7 @@
                                 </constraints>
                                 <state key="normal" title="Add/Edit" image="Add"/>
                                 <connections>
-                                    <action selector="addEditPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pXH-e7-Ee6"/>
+                                    <action selector="addEditChanged:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I5T-00-kGO"/>
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gkL-0S-7mT">
@@ -274,11 +283,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="addEdit" destination="0v1-P9-IHI" id="HSD-54-2rG"/>
+                        <outlet property="addEdit" destination="0v1-P9-IHI" id="osG-3g-aE8"/>
                         <outlet property="autoSwitch" destination="gkL-0S-7mT" id="wM7-IN-tI2"/>
+                        <outlet property="column" destination="HZH-ZF-sd6" id="Ycv-RM-zlA"/>
+                        <outlet property="cover" destination="bax-c2-Scn" id="Sz7-aX-u1R"/>
                         <outlet property="direction" destination="1Eu-5c-AXq" id="H6R-kM-oI9"/>
                         <outlet property="distance" destination="XhA-oA-Pob" id="YtE-aU-xlk"/>
                         <outlet property="plot" destination="dpL-th-lfr" id="ECJ-hJ-jth"/>
+                        <outlet property="row" destination="auc-fv-57v" id="k9j-Bj-Jgt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
