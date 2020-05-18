@@ -14,6 +14,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    // MARK: - Connections and actions
+    
     @IBOutlet weak var plot: UISegmentedControl!
     @IBAction func plotChanged(_ sender: Any) {
     }
@@ -23,20 +26,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var distance: UISegmentedControl!
     @IBAction func distanceChanged(_ sender: Any) {
     }
-    @IBOutlet weak var cover: UISegmentedControl!
-    @IBAction func coverChanged(_ sender: Any) {
-    }
-    @IBOutlet weak var input: UITextField!
-    @IBAction func inputEdited(_ sender: Any) {
-    }
     @IBOutlet weak var autoSwitch: UISwitch!
     @IBAction func autoSwitchChanged(_ sender: Any) {
-    }
-    @IBOutlet weak var fractional: UISegmentedControl!
-    @IBAction func fractionalChanged(_ sender: Any) {
-    }
-    @IBOutlet weak var addEdit: UIButton!
-    @IBAction func addEditPressed(_ sender: Any) {
     }
 }
 
