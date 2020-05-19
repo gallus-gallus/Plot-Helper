@@ -384,7 +384,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Add" width="1800" height="900"/>
-        <image name="Get" width="1800" height="900"/>
+        <image name="Add" width="900" height="450"/>
+        <image name="Get" width="900" height="450"/>
     </resources>
 </document>

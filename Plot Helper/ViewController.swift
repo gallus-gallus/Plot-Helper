@@ -15,6 +15,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         updateOnChange()
     }
+    // MARK: - Variables
+    var currentPointIndex: Int? = nil
+    var add = true
     // MARK: - Functions
     func addPoint(at: storage.point){
         storage.listOfPoints.append(at)
@@ -76,8 +79,15 @@ class ViewController: UIViewController {
     
     
     func addActions(){
-        addPoint(at: storage.point(plot: plot.selectedSegmentIndex+1, direction: direction.selectedSegmentIndex+1, distance: distance.selectedSegmentIndex+1, row: row.selectedSegmentIndex+1, column: column.selectedSegmentIndex+1, cover: cover.selectedSegmentIndex+1))
         updateOnChange()
+        if add == true{
+            addPoint(at: storage.point(plot: plot.selectedSegmentIndex+1, direction: direction.selectedSegmentIndex+1, distance: distance.selectedSegmentIndex+1, row: row.selectedSegmentIndex+1, column: column.selectedSegmentIndex+1, cover: cover.selectedSegmentIndex+1))
+            updateOnChange()
+        }else{
+            let currentPoint = pointExists(at: storage.point(plot: plot.selectedSegmentIndex+1, direction: direction.selectedSegmentIndex+1, distance: distance.selectedSegmentIndex+1, row: row.selectedSegmentIndex+1, column: column.selectedSegmentIndex+1, cover: cover.selectedSegmentIndex+1))
+            storage.listOfPoints[currentPoint!].cover = cover.selectedSegmentIndex+1
+            updateOnChange()
+        }
     }
     
     func sampleExists(at: storage.sample) -> Int?{
@@ -120,6 +130,30 @@ class ViewController: UIViewController {
         }else{
             sampleLabel.text = "0"
         }
+        let currentPoint: Int? = pointExists(at: storage.point(plot: plot.selectedSegmentIndex+1, direction: direction.selectedSegmentIndex+1, distance: distance.selectedSegmentIndex+1, row: row.selectedSegmentIndex+1, column: column.selectedSegmentIndex+1, cover: cover.selectedSegmentIndex+1))
+        currentPointIndex = currentPoint
+        if currentPoint != nil{
+            print(currentPoint!)
+            addEdit.setImage(UIImage(named: "Edit"), for: .normal)
+            add = false
+        }else{
+            addEdit.setImage(UIImage(named: "Add"), for: .normal)
+            add = true
+        }
+    }
+    
+    func pointExists(at: storage.point) -> Int?{
+        let point = at
+        var iterations = 0
+        for i in storage.listOfPoints{
+            if i.plot == point.plot && i.direction == point.direction && i.distance == point.distance && i.row == point.row && i.column == point.column{
+                print("Found point at \(iterations).")
+                return iterations
+            }
+            iterations += 1
+        }
+        print("Point non-exsitant.")
+        return nil
     }
     
     // MARK: - Connections and actions
