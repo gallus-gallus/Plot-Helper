@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        updateOnChange()
     }
     // MARK: - Functions
     func addPoint(at: storage.point){
@@ -28,6 +29,10 @@ class ViewController: UIViewController {
         let string = "plot \(point.plot), direction \(direction.titleForSegment(at: point.direction-1) ?? "nil"), distance \(distance.titleForSegment(at: point.direction-1) ?? "nil"), row \(point.row), column \(point.column), cover \(cover.titleForSegment(at: point.direction-1) ?? "nil")"
         return string
     }
+    
+    
+    
+    //Function to figure out samples from points
     func figureSamples(){
         var sampleList = [storage.sample]()
         var iCount = 0
@@ -68,37 +73,89 @@ class ViewController: UIViewController {
         print("Figured Samples")
         print(sampleList)
     }
+    
+    
     func addActions(){
         addPoint(at: storage.point(plot: plot.selectedSegmentIndex+1, direction: direction.selectedSegmentIndex+1, distance: distance.selectedSegmentIndex+1, row: row.selectedSegmentIndex+1, column: column.selectedSegmentIndex+1, cover: cover.selectedSegmentIndex+1))
+        updateOnChange()
+    }
+    
+    func sampleExists(at: storage.sample) -> Int?{
+        let sample = at
         figureSamples()
+        var iterations = 0
+        var match = false
+        for i in storage.listOfSamples{
+            if i.plot == sample.plot && i.direction == sample.direction && i.distance == sample.distance{
+                match = true
+                print("Found sample at plot \(iterations).")
+                return iterations
+            }
+            iterations += 1
+        }
+        if match == false{
+            return nil
+        }
+    }
+    func numberOfPointsIn(sample: storage.sample) -> Int?{
+        if sampleExists(at: sample) != nil{
+            let s = storage.listOfSamples[sampleExists(at: sample)!]
+            let sum = s.coverCheatgrass + s.coverCheatgrassLitter + s.coverGround + s.coverLitter + s.coverPlant
+            print("Found \(sum) points in sample")
+            return sum
+        }else{
+            print("Sample non-existant.")
+            return nil
+        }
+    }
+    func currentSample(plot: Int, direction: Int, distance: Int) -> storage.sample{
+        return storage.sample(plot: plot, direction: direction, distance: distance, coverCheatgrass: 0, coverPlant: 0, coverLitter: 0, coverCheatgrassLitter: 0, coverGround: 0)
+    }
+    
+    func updateOnChange(){
+        let currentSamp = currentSample(plot: plot.selectedSegmentIndex+1, direction: direction.selectedSegmentIndex+1, distance: distance.selectedSegmentIndex+1)
+        let numberOfPoints: Int? = numberOfPointsIn(sample: currentSamp)
+        if numberOfPoints != nil{
+            sampleLabel.text = String(numberOfPoints!)
+        }else{
+            sampleLabel.text = "0"
+        }
     }
     
     // MARK: - Connections and actions
     
     @IBOutlet weak var plot: UISegmentedControl!
     @IBAction func plotChanged(_ sender: Any) {
+        updateOnChange()
     }
     @IBOutlet weak var direction: UISegmentedControl!
     @IBAction func directionChanged(_ sender: Any) {
+        updateOnChange()
     }
     @IBOutlet weak var distance: UISegmentedControl!
     @IBAction func distanceChanged(_ sender: Any) {
+        updateOnChange()
     }
     @IBOutlet weak var row: UISegmentedControl!
     @IBAction func rowChanged(_ sender: Any) {
+        updateOnChange()
     }
     @IBOutlet weak var column: UISegmentedControl!
     @IBAction func columnChanged(_ sender: Any) {
+        updateOnChange()
     }
     @IBOutlet weak var cover: UISegmentedControl!
     @IBAction func coverChanged(_ sender: Any) {
+        updateOnChange()
     }
     @IBOutlet weak var autoSwitch: UISwitch!
     @IBAction func autoSwitchChanged(_ sender: Any) {
+        updateOnChange()
     }
     @IBOutlet weak var addEdit: UIButton!
     @IBAction func addEditChanged(_ sender: Any) {
         addActions()
     }
+    @IBOutlet weak var sampleLabel: UILabel!
 }
 
