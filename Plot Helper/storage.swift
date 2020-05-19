@@ -17,5 +17,16 @@ class storage: NSObject {
         var column: Int
         var cover: Int
     }
+    struct sample {
+        var plot: Int
+        var direction: Int
+        var distance: Int
+        var coverCheatgrass: Int
+        var coverPlant: Int
+        var coverLitter: Int
+        var coverCheatgrassLitter: Int
+        var coverGround: Int
+    }
     static var listOfPoints = [point]()
+    static var listOfSamples = [sample]()
 }
