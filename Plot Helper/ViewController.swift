@@ -16,6 +16,7 @@ class ViewController: UIViewController {
         updateOnChange()
     }
     // MARK: - Variables
+    
     var currentPointIndex: Int? = nil
     var add = true
     // MARK: - Functions
@@ -29,7 +30,7 @@ class ViewController: UIViewController {
         return string
     }
     func pointToGoodString(point: storage.point) -> String{
-        let string = "plot \(point.plot), direction \(direction.titleForSegment(at: point.direction-1) ?? "nil"), distance \(distance.titleForSegment(at: point.direction-1) ?? "nil"), row \(point.row), column \(point.column), cover \(cover.titleForSegment(at: point.direction-1) ?? "nil")"
+        let string = "plot \(point.plot), direction \(direction.titleForSegment(at: point.direction-1) ?? "nil"), distance \(distance.titleForSegment(at: point.distance-1) ?? "nil"), row \(point.row), column \(point.column), cover \(cover.titleForSegment(at: point.cover-1) ?? "nil")"
         return string
     }
     
@@ -81,9 +82,15 @@ class ViewController: UIViewController {
     func addActions(){
         updateOnChange()
         if add == true{
+            autoSwitch.isEnabled = true
             addPoint(at: storage.point(plot: plot.selectedSegmentIndex+1, direction: direction.selectedSegmentIndex+1, distance: distance.selectedSegmentIndex+1, row: row.selectedSegmentIndex+1, column: column.selectedSegmentIndex+1, cover: cover.selectedSegmentIndex+1))
+            if autoSwitch.isOn == true{
+                autoStep()
+            }
             updateOnChange()
         }else{
+            autoSwitch.isEnabled = false
+            //print("Point exitsts at \(pointExists(at: storage.point(plot: plot.selectedSegmentIndex+1, direction: direction.selectedSegmentIndex+1, distance: distance.selectedSegmentIndex+1, row: row.selectedSegmentIndex+1, column: column.selectedSegmentIndex+1, cover: cover.selectedSegmentIndex+1)) ?? -1).")
             let currentPoint = pointExists(at: storage.point(plot: plot.selectedSegmentIndex+1, direction: direction.selectedSegmentIndex+1, distance: distance.selectedSegmentIndex+1, row: row.selectedSegmentIndex+1, column: column.selectedSegmentIndex+1, cover: cover.selectedSegmentIndex+1))
             storage.listOfPoints[currentPoint!].cover = cover.selectedSegmentIndex+1
             updateOnChange()
@@ -154,6 +161,32 @@ class ViewController: UIViewController {
         }
         print("Point non-exsitant.")
         return nil
+    }
+    
+    func autoStep(){
+        updateOnChange()
+        if column.selectedSegmentIndex<4{
+            column.selectedSegmentIndex += 1
+        }else if row.selectedSegmentIndex<4{
+            row.selectedSegmentIndex += 1
+            column.selectedSegmentIndex = 0
+        }else if distance.selectedSegmentIndex<7{
+            distance.selectedSegmentIndex += 1
+            column.selectedSegmentIndex = 0
+            row.selectedSegmentIndex = 0
+        }else if direction.selectedSegmentIndex<7{
+            direction.selectedSegmentIndex += 1
+            column.selectedSegmentIndex = 0
+            row.selectedSegmentIndex = 0
+            distance.selectedSegmentIndex = 0
+        }else if plot.selectedSegmentIndex<7{
+            plot.selectedSegmentIndex += 1
+            column.selectedSegmentIndex = 0
+            row.selectedSegmentIndex = 0
+            distance.selectedSegmentIndex = 0
+            direction.selectedSegmentIndex = 0
+        }
+        print("Finished Auto-step.")
     }
     
     // MARK: - Connections and actions

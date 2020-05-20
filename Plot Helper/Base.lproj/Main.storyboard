@@ -34,7 +34,7 @@
                                                     <segment title="8"/>
                                                 </segments>
                                                 <connections>
-                                                    <action selector="plotChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="HNv-QG-NU0"/>
+                                                    <action selector="plotChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="ecl-QE-DBA"/>
                                                 </connections>
                                             </segmentedControl>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Plot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDv-dx-JV3">
@@ -74,7 +74,7 @@
                                                     <segment title="NW"/>
                                                 </segments>
                                                 <connections>
-                                                    <action selector="directionChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="V0Z-41-CrT"/>
+                                                    <action selector="directionChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="kQa-32-ty5"/>
                                                 </connections>
                                             </segmentedControl>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Direction" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COD-56-67D">
@@ -311,9 +311,9 @@
                         <outlet property="autoSwitch" destination="gkL-0S-7mT" id="wM7-IN-tI2"/>
                         <outlet property="column" destination="HZH-ZF-sd6" id="Ycv-RM-zlA"/>
                         <outlet property="cover" destination="bax-c2-Scn" id="Sz7-aX-u1R"/>
-                        <outlet property="direction" destination="1Eu-5c-AXq" id="H6R-kM-oI9"/>
+                        <outlet property="direction" destination="1Eu-5c-AXq" id="LPp-Gy-JMm"/>
                         <outlet property="distance" destination="XhA-oA-Pob" id="YtE-aU-xlk"/>
-                        <outlet property="plot" destination="dpL-th-lfr" id="ECJ-hJ-jth"/>
+                        <outlet property="plot" destination="dpL-th-lfr" id="KIm-LH-nQ3"/>
                         <outlet property="row" destination="auc-fv-57v" id="k9j-Bj-Jgt"/>
                         <outlet property="sampleLabel" destination="wLl-1F-zZs" id="ao3-Ey-SiQ"/>
                     </connections>
