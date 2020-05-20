@@ -89,8 +89,6 @@ class ViewController: UIViewController {
             }
             updateOnChange()
         }else{
-            autoSwitch.isEnabled = false
-            //print("Point exitsts at \(pointExists(at: storage.point(plot: plot.selectedSegmentIndex+1, direction: direction.selectedSegmentIndex+1, distance: distance.selectedSegmentIndex+1, row: row.selectedSegmentIndex+1, column: column.selectedSegmentIndex+1, cover: cover.selectedSegmentIndex+1)) ?? -1).")
             let currentPoint = pointExists(at: storage.point(plot: plot.selectedSegmentIndex+1, direction: direction.selectedSegmentIndex+1, distance: distance.selectedSegmentIndex+1, row: row.selectedSegmentIndex+1, column: column.selectedSegmentIndex+1, cover: cover.selectedSegmentIndex+1))
             storage.listOfPoints[currentPoint!].cover = cover.selectedSegmentIndex+1
             updateOnChange()
