@@ -19,6 +19,12 @@ class ListView: UIViewController {
         for i in storage.listOfSamples{
             masterSting += sampleToGoodString(sample: i)
         }
+        for _ in 1...5{
+            masterSting += "\n"
+        }
+        for i in storage.listOfSamples{
+            masterSting += sampleToCSVString(sample: i)
+        }
         textField.text = masterSting
     }
     @IBOutlet weak var textField: UITextView!
@@ -41,6 +47,11 @@ class ListView: UIViewController {
         var string = ""
         let directions = ["N","NE","E","SE","S","SW","W","NW"]
         string = "Plot \(sample.plot), direction \(directions[sample.direction-1]), distance \(sample.distance), with \(sample.coverCheatgrass) cheatgrass, \(sample.coverPlant) other plants, \(sample.coverLitter) litter, \(sample.coverCheatgrassLitter) cheatgrass litter, \(sample.coverGround) ground.\n"
+        return string
+    }
+    func sampleToCSVString(sample: storage.sample) -> String{
+        var string = ""
+        string = "\(sample.plot),\(sample.direction),\(sample.distance),\(sample.coverCheatgrass),\(sample.coverPlant), \(sample.coverLitter), \(sample.coverCheatgrassLitter), \(sample.coverGround)\n"
         return string
     }
     /*
