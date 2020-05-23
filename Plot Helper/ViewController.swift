@@ -13,10 +13,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let decodedListString = storage.openFileNamed("listSave", type: "r", write: "") ?? ""
+        print("Read code \(decodedListString)")
+        if decodedListString != ""{
+            let decodedList = decodeList(string: decodedListString)
+            storage.listOfPoints = decodedList
+            print(decodedList)
+        }else{
+            
+        }
+        shouldWrite = false
         updateOnChange()
+        shouldWrite = true
     }
     // MARK: - Variables
-    
+    var shouldWrite = false
     var currentPointIndex: Int? = nil
     var add = true
     // MARK: - Functions
@@ -32,50 +43,6 @@ class ViewController: UIViewController {
     func pointToGoodString(point: storage.point) -> String{
         let string = "plot \(point.plot), direction \(direction.titleForSegment(at: point.direction-1) ?? "nil"), distance \(distance.titleForSegment(at: point.distance-1) ?? "nil"), row \(point.row), column \(point.column), cover \(cover.titleForSegment(at: point.cover-1) ?? "nil")"
         return string
-    }
-    
-    
-    
-    //Function to figure out samples from points
-    func figureSamples(){
-        var sampleList = [storage.sample]()
-        var iCount = 0
-        var jCount = 0
-        var matchFound = false
-        for i in storage.listOfPoints{
-            for j in sampleList{
-                if i.plot == j.plot && i.direction == j.direction && i.distance == j.distance{
-                    matchFound = true
-                    let coverType = i.cover
-                    if coverType == 1{sampleList[jCount].coverCheatgrass += 1}
-                    if coverType == 2{sampleList[jCount].coverPlant += 1}
-                    if coverType == 3{sampleList[jCount].coverLitter += 1}
-                    if coverType == 4{sampleList[jCount].coverCheatgrassLitter += 1}
-                    if coverType == 5{sampleList[jCount].coverGround += 1}
-                }
-                jCount += 1
-            }
-            if matchFound == false{
-                let coverType = i.cover
-                if coverType == 1{
-                    sampleList.append(storage.sample(plot: i.plot, direction: i.direction, distance: i.distance, coverCheatgrass: 1, coverPlant: 0, coverLitter: 0, coverCheatgrassLitter: 0, coverGround: 0))
-                }else if coverType == 2{
-                    sampleList.append(storage.sample(plot: i.plot, direction: i.direction, distance: i.distance, coverCheatgrass: 0, coverPlant: 1, coverLitter: 0, coverCheatgrassLitter: 0, coverGround: 0))
-                }else if coverType == 3{
-                    sampleList.append(storage.sample(plot: i.plot, direction: i.direction, distance: i.distance, coverCheatgrass: 0, coverPlant: 0, coverLitter: 1, coverCheatgrassLitter: 0, coverGround: 0))
-                }else if coverType == 4{
-                    sampleList.append(storage.sample(plot: i.plot, direction: i.direction, distance: i.distance, coverCheatgrass: 0, coverPlant: 0, coverLitter: 0, coverCheatgrassLitter: 1, coverGround: 0))
-                }else if coverType == 5{
-                    sampleList.append(storage.sample(plot: i.plot, direction: i.direction, distance: i.distance, coverCheatgrass: 0, coverPlant: 0, coverLitter: 0, coverCheatgrassLitter: 0, coverGround: 1))
-                }
-            }
-            matchFound = false
-            iCount += 1
-            jCount = 0
-        }
-        storage.listOfSamples = sampleList
-        print("Figured Samples")
-        print(sampleList)
     }
     
     
@@ -141,9 +108,13 @@ class ViewController: UIViewController {
             print(currentPoint!)
             addEdit.setImage(UIImage(named: "Edit"), for: .normal)
             add = false
+            cover.selectedSegmentIndex = storage.listOfPoints[currentPoint!].cover-1
         }else{
             addEdit.setImage(UIImage(named: "Add"), for: .normal)
             add = true
+        }
+        if shouldWrite == true{
+            storage.openFileNamed("listSave", type: "w", write: codeList(storage.listOfPoints))
         }
     }
     
@@ -187,6 +158,100 @@ class ViewController: UIViewController {
         print("Finished Auto-step.")
     }
     
+    
+    // MARK: - Figure Samples Function
+    //Function to figure out samples from points
+    func figureSamples(){
+        var sampleList = [storage.sample]()
+        var iCount = 0
+        var jCount = 0
+        var matchFound = false
+        for i in storage.listOfPoints{
+            for j in sampleList{
+                if i.plot == j.plot && i.direction == j.direction && i.distance == j.distance{
+                    matchFound = true
+                    let coverType = i.cover
+                    if coverType == 1{sampleList[jCount].coverCheatgrass += 1}
+                    if coverType == 2{sampleList[jCount].coverPlant += 1}
+                    if coverType == 3{sampleList[jCount].coverLitter += 1}
+                    if coverType == 4{sampleList[jCount].coverCheatgrassLitter += 1}
+                    if coverType == 5{sampleList[jCount].coverGround += 1}
+                }
+                jCount += 1
+            }
+            if matchFound == false{
+                let coverType = i.cover
+                if coverType == 1{
+                    sampleList.append(storage.sample(plot: i.plot, direction: i.direction, distance: i.distance, coverCheatgrass: 1, coverPlant: 0, coverLitter: 0, coverCheatgrassLitter: 0, coverGround: 0))
+                }else if coverType == 2{
+                    sampleList.append(storage.sample(plot: i.plot, direction: i.direction, distance: i.distance, coverCheatgrass: 0, coverPlant: 1, coverLitter: 0, coverCheatgrassLitter: 0, coverGround: 0))
+                }else if coverType == 3{
+                    sampleList.append(storage.sample(plot: i.plot, direction: i.direction, distance: i.distance, coverCheatgrass: 0, coverPlant: 0, coverLitter: 1, coverCheatgrassLitter: 0, coverGround: 0))
+                }else if coverType == 4{
+                    sampleList.append(storage.sample(plot: i.plot, direction: i.direction, distance: i.distance, coverCheatgrass: 0, coverPlant: 0, coverLitter: 0, coverCheatgrassLitter: 1, coverGround: 0))
+                }else if coverType == 5{
+                    sampleList.append(storage.sample(plot: i.plot, direction: i.direction, distance: i.distance, coverCheatgrass: 0, coverPlant: 0, coverLitter: 0, coverCheatgrassLitter: 0, coverGround: 1))
+                }
+            }
+            matchFound = false
+            iCount += 1
+            jCount = 0
+        }
+        storage.listOfSamples = sampleList
+        print("Figured Samples")
+        print(sampleList)
+    }
+    
+    // MARK: - File Related Functions
+    func codeList(_ list: [storage.point]) -> String{
+        var string = ""
+        if list.count > 0 {
+            for i in list{
+                string += "\(i.plot),\(i.direction),\(i.distance),\(i.row),\(i.column),\(i.cover)!"
+            }
+        }else{
+            string = ""
+        }
+        print("Generated code: \(string)")
+        return string
+    }
+    
+    func decodeList(string: String) -> [storage.point]{
+        var storageString = ""
+        var listOfStrings = [storage.point]()
+        var currentInfo = 1
+        var storePlot = 0
+        var storeDirection = 0
+        var storeDistance = 0
+        var storeRow = 0
+        var storeColumn = 0
+        var storeCover = 0
+        for i in string{
+            if i != "," && i != "!"{
+                storageString += String(i)
+            }else if i == ","{
+                if currentInfo == 1{
+                    storePlot = Int(storageString)!
+                }else if currentInfo == 2{
+                    storeDirection = Int(storageString)!
+                }else if currentInfo == 3{
+                    storeDistance = Int(storageString)!
+                }else if currentInfo == 4{
+                    storeRow = Int(storageString)!
+                }else if currentInfo == 5{
+                    storeColumn = Int(storageString)!
+                }else if currentInfo == 6{
+                    storeCover = Int(storageString)!
+                }
+            }else if i == "!"{
+                currentInfo += 1
+                listOfStrings.append(storage.point(plot: storePlot, direction: storeDirection, distance: storeDistance, row: storeRow, column: storeColumn, cover: storeCover))
+                storageString = ""
+            }
+        }
+        return listOfStrings
+    }
+    
     // MARK: - Connections and actions
     
     @IBOutlet weak var plot: UISegmentedControl!
@@ -211,7 +276,7 @@ class ViewController: UIViewController {
     }
     @IBOutlet weak var cover: UISegmentedControl!
     @IBAction func coverChanged(_ sender: Any) {
-        updateOnChange()
+        //updateOnChange()
     }
     @IBOutlet weak var autoSwitch: UISwitch!
     @IBAction func autoSwitchChanged(_ sender: Any) {
