@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F438006424799AC800136EC7 /* listSave in Resources */ = {isa = PBXBuildFile; fileRef = F438006324799AC800136EC7 /* listSave */; };
-		F43800662479A51C00136EC7 /* SaveList.plist in Resources */ = {isa = PBXBuildFile; fileRef = F43800652479A51C00136EC7 /* SaveList.plist */; };
 		F469EAB6246F025C00ED00D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469EAB5246F025C00ED00D0 /* AppDelegate.swift */; };
 		F469EAB8246F025C00ED00D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469EAB7246F025C00ED00D0 /* SceneDelegate.swift */; };
 		F469EABA246F025C00ED00D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469EAB9246F025C00ED00D0 /* ViewController.swift */; };
@@ -22,7 +21,6 @@
 
 /* Begin PBXFileReference section */
 		F438006324799AC800136EC7 /* listSave */ = {isa = PBXFileReference; lastKnownFileType = text; path = listSave; sourceTree = "<group>"; };
-		F43800652479A51C00136EC7 /* SaveList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SaveList.plist; sourceTree = "<group>"; };
 		F469EAB2246F025C00ED00D0 /* Plot Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Plot Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F469EAB5246F025C00ED00D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F469EAB7246F025C00ED00D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,7 +68,6 @@
 				F469EAB7246F025C00ED00D0 /* SceneDelegate.swift */,
 				F469EAB9246F025C00ED00D0 /* ViewController.swift */,
 				F438006324799AC800136EC7 /* listSave */,
-				F43800652479A51C00136EC7 /* SaveList.plist */,
 				F469EABB246F025C00ED00D0 /* Main.storyboard */,
 				F4F264C32472FD1C00301267 /* storage.swift */,
 				F489C70C24744777009C8C1B /* ListView.swift */,
@@ -140,7 +137,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F43800662479A51C00136EC7 /* SaveList.plist in Resources */,
 				F469EAC2246F026000ED00D0 /* LaunchScreen.storyboard in Resources */,
 				F469EABF246F026000ED00D0 /* Assets.xcassets in Resources */,
 				F469EABD246F025C00ED00D0 /* Main.storyboard in Resources */,

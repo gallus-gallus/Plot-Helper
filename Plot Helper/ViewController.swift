@@ -99,9 +99,9 @@ class ViewController: UIViewController {
         let currentSamp = currentSample(plot: plot.selectedSegmentIndex+1, direction: direction.selectedSegmentIndex+1, distance: distance.selectedSegmentIndex+1)
         let numberOfPoints: Int? = numberOfPointsIn(sample: currentSamp)
         if numberOfPoints != nil{
-            sampleLabel.text = String(numberOfPoints!)
+            sampleLabel.text = "\(numberOfPoints!) points in sample"
         }else{
-            sampleLabel.text = "0"
+            sampleLabel.text = "0 points in sample"
         }
         let currentPoint: Int? = pointExists(at: storage.point(plot: plot.selectedSegmentIndex+1, direction: direction.selectedSegmentIndex+1, distance: distance.selectedSegmentIndex+1, row: row.selectedSegmentIndex+1, column: column.selectedSegmentIndex+1, cover: cover.selectedSegmentIndex+1))
         currentPointIndex = currentPoint
@@ -115,7 +115,7 @@ class ViewController: UIViewController {
             add = true
         }
         if shouldWrite == true{
-            storage.openFileNamed("listSave", type: "w", write: codeList())
+            let _ = storage.openFileNamed("listSave", type: "w", write: codeList())
         }
     }
     
@@ -140,7 +140,7 @@ class ViewController: UIViewController {
         }else if row.selectedSegmentIndex<4{
             row.selectedSegmentIndex += 1
             column.selectedSegmentIndex = 0
-        }else if distance.selectedSegmentIndex<7{
+        }else if distance.selectedSegmentIndex<4{
             distance.selectedSegmentIndex += 1
             column.selectedSegmentIndex = 0
             row.selectedSegmentIndex = 0

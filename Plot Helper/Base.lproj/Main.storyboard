@@ -104,14 +104,11 @@
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XhA-oA-Pob">
                                                 <rect key="frame" x="17" y="61" width="761" height="32"/>
                                                 <segments>
-                                                    <segment title="5m"/>
-                                                    <segment title="15m"/>
-                                                    <segment title="25m"/>
-                                                    <segment title="35m"/>
-                                                    <segment title="45m"/>
-                                                    <segment title="55m"/>
-                                                    <segment title="65m"/>
-                                                    <segment title="75m"/>
+                                                    <segment title="17m"/>
+                                                    <segment title="40m"/>
+                                                    <segment title="53m"/>
+                                                    <segment title="63m"/>
+                                                    <segment title="71m"/>
                                                 </segments>
                                                 <connections>
                                                     <action selector="distanceChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="3qj-Wv-o2f"/>
@@ -327,26 +324,40 @@
             <objects>
                 <viewController id="SMI-HK-ONk" customClass="ListView" customModule="Plot_Helper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DIt-HT-RWl">
-                        <rect key="frame" x="0.0" y="0.0" width="712" height="1006.9200564096436"/>
+                        <rect key="frame" x="0.0" y="0.0" width="712" height="1007"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DWh-u8-LM8">
-                                <rect key="frame" x="20" y="20" width="672" height="967"/>
+                                <rect key="frame" x="20" y="20" width="672" height="929"/>
                                 <color key="backgroundColor" systemColor="quaternaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.17999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3P-S8-NLr">
+                                <rect key="frame" x="320" y="957" width="72" height="30"/>
+                                <state key="normal" title="Clear Data">
+                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="clearData:" destination="SMI-HK-ONk" eventType="touchUpInside" id="yCy-KG-0j2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="DWh-u8-LM8" firstAttribute="leading" secondItem="0pd-Zi-kKo" secondAttribute="leading" constant="20" id="36X-nB-nBx"/>
-                            <constraint firstItem="0pd-Zi-kKo" firstAttribute="bottom" secondItem="DWh-u8-LM8" secondAttribute="bottom" constant="20" id="KX7-pT-Vc3"/>
+                            <constraint firstItem="w3P-S8-NLr" firstAttribute="top" secondItem="DWh-u8-LM8" secondAttribute="bottom" constant="8" id="Rhj-p0-Z8s"/>
                             <constraint firstItem="0pd-Zi-kKo" firstAttribute="trailing" secondItem="DWh-u8-LM8" secondAttribute="trailing" constant="20" id="Voz-Lo-rMx"/>
-                            <constraint firstItem="DWh-u8-LM8" firstAttribute="top" secondItem="0pd-Zi-kKo" secondAttribute="top" constant="20" id="d3o-Vx-4qo"/>
+                            <constraint firstItem="DWh-u8-LM8" firstAttribute="top" secondItem="0pd-Zi-kKo" secondAttribute="top" constant="20" id="WeS-Ca-p2m"/>
+                            <constraint firstItem="w3P-S8-NLr" firstAttribute="centerX" secondItem="DIt-HT-RWl" secondAttribute="centerX" id="gcA-9Z-u56"/>
+                            <constraint firstItem="0pd-Zi-kKo" firstAttribute="bottom" secondItem="w3P-S8-NLr" secondAttribute="bottom" constant="20" id="rzR-72-KzR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0pd-Zi-kKo"/>
                     </view>
+                    <connections>
+                        <outlet property="textField" destination="DWh-u8-LM8" id="7Qu-y7-TeL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LFI-iW-3op" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
