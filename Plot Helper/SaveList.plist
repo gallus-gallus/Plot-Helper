@@ -3,6 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>points</key>
-	<array/>
+	<array>
+		<array>
+			<string></string>
+		</array>
+	</array>
 </dict>
 </plist>

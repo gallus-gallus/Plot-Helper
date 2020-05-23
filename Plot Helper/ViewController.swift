@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let _ = storage.openFileNamed("listSave", type: "w", write: "1,1,1,1,1,3,!")
         let decodedListString = storage.openFileNamed("listSave", type: "r", write: "") ?? ""
         print("Read code \(decodedListString)")
         if decodedListString != ""{
@@ -114,7 +115,7 @@ class ViewController: UIViewController {
             add = true
         }
         if shouldWrite == true{
-            storage.openFileNamed("listSave", type: "w", write: codeList(storage.listOfPoints))
+            storage.openFileNamed("listSave", type: "w", write: codeList())
         }
     }
     
@@ -203,11 +204,11 @@ class ViewController: UIViewController {
     }
     
     // MARK: - File Related Functions
-    func codeList(_ list: [storage.point]) -> String{
+    func codeList() -> String{
         var string = ""
-        if list.count > 0 {
-            for i in list{
-                string += "\(i.plot),\(i.direction),\(i.distance),\(i.row),\(i.column),\(i.cover)!"
+        if storage.listOfPoints.count > 0 {
+            for i in storage.listOfPoints{
+                string += "\(i.plot),\(i.direction),\(i.distance),\(i.row),\(i.column),\(i.cover),!"
             }
         }else{
             string = ""
@@ -243,8 +244,10 @@ class ViewController: UIViewController {
                 }else if currentInfo == 6{
                     storeCover = Int(storageString)!
                 }
-            }else if i == "!"{
                 currentInfo += 1
+                storageString = ""
+            }else if i == "!"{
+                currentInfo = 1
                 listOfStrings.append(storage.point(plot: storePlot, direction: storeDirection, distance: storeDistance, row: storeRow, column: storeColumn, cover: storeCover))
                 storageString = ""
             }
