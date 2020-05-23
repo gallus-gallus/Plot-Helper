@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let _ = storage.openFileNamed("listSave", type: "w", write: "1,1,1,1,1,3,!")
+        //let _ = storage.openFileNamed("listSave", type: "w", write: "1,1,1,1,1,3,!")
         let decodedListString = storage.openFileNamed("listSave", type: "r", write: "") ?? ""
         print("Read code \(decodedListString)")
         if decodedListString != ""{
