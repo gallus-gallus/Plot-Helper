@@ -12,10 +12,20 @@ class CommentView: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let comment = storage.openFileNamed("comments", type: "r", write: "")
+        commentField.text = comment
 
         // Do any additional setup after loading the view.
     }
+    @IBOutlet weak var commentField: UITextView!
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if isBeingDismissed {
+            // TODO: Do your stuff here.
+            let _ = storage.openFileNamed("comments", type: "w", write: commentField.text)
+        }
+    }
 
     /*
     // MARK: - Navigation

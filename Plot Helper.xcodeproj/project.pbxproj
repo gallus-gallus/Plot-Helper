@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F438006424799AC800136EC7 /* listSave in Resources */ = {isa = PBXBuildFile; fileRef = F438006324799AC800136EC7 /* listSave */; };
+		F43800682479BCFF00136EC7 /* comments in Resources */ = {isa = PBXBuildFile; fileRef = F43800672479BCFF00136EC7 /* comments */; };
 		F469EAB6246F025C00ED00D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469EAB5246F025C00ED00D0 /* AppDelegate.swift */; };
 		F469EAB8246F025C00ED00D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469EAB7246F025C00ED00D0 /* SceneDelegate.swift */; };
 		F469EABA246F025C00ED00D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F469EAB9246F025C00ED00D0 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		F438006324799AC800136EC7 /* listSave */ = {isa = PBXFileReference; lastKnownFileType = text; path = listSave; sourceTree = "<group>"; };
+		F43800672479BCFF00136EC7 /* comments */ = {isa = PBXFileReference; lastKnownFileType = text; path = comments; sourceTree = "<group>"; };
 		F469EAB2246F025C00ED00D0 /* PlotHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlotHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F469EAB5246F025C00ED00D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F469EAB7246F025C00ED00D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				F438006324799AC800136EC7 /* listSave */,
 				F469EABB246F025C00ED00D0 /* Main.storyboard */,
 				F4F264C32472FD1C00301267 /* storage.swift */,
+				F43800672479BCFF00136EC7 /* comments */,
 				F489C70C24744777009C8C1B /* ListView.swift */,
 				F489C70E24744787009C8C1B /* CommentView.swift */,
 				F469EABE246F026000ED00D0 /* Assets.xcassets */,
@@ -140,6 +143,7 @@
 				F469EAC2246F026000ED00D0 /* LaunchScreen.storyboard in Resources */,
 				F469EABF246F026000ED00D0 /* Assets.xcassets in Resources */,
 				F469EABD246F025C00ED00D0 /* Main.storyboard in Resources */,
+				F43800682479BCFF00136EC7 /* comments in Resources */,
 				F438006424799AC800136EC7 /* listSave in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

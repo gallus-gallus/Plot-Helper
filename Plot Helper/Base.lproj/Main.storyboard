@@ -388,6 +388,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4mL-Ho-4n9"/>
                     </view>
+                    <connections>
+                        <outlet property="commentField" destination="SNl-2W-1Ne" id="a2H-rv-noN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tgm-xc-bfV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

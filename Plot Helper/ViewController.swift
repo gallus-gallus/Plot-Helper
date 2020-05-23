@@ -30,6 +30,7 @@ class ViewController: UIViewController {
     // MARK: - Variables
     var shouldWrite = false
     var currentPointIndex: Int? = nil
+    var autoSwitchSave = storage.point(plot: 1, direction: 1, distance: 1, row: 1, column: 1, cover: 1)
     var add = true
     // MARK: - Functions
     func addPoint(at: storage.point){
@@ -283,6 +284,16 @@ class ViewController: UIViewController {
     }
     @IBOutlet weak var autoSwitch: UISwitch!
     @IBAction func autoSwitchChanged(_ sender: Any) {
+        updateOnChange()
+        if autoSwitch.isOn == true{
+            plot.selectedSegmentIndex = autoSwitchSave.plot-1
+            direction.selectedSegmentIndex = autoSwitchSave.direction-1
+            distance.selectedSegmentIndex = autoSwitchSave.distance-1
+            row.selectedSegmentIndex = autoSwitchSave.row-1
+            column.selectedSegmentIndex = autoSwitchSave.column-1
+        }else{
+            autoSwitchSave = storage.point(plot: plot.selectedSegmentIndex+1, direction: direction.selectedSegmentIndex+1, distance: distance.selectedSegmentIndex+1, row: row.selectedSegmentIndex+1, column: column.selectedSegmentIndex+1, cover: cover.selectedSegmentIndex+1)
+        }
         updateOnChange()
     }
     @IBOutlet weak var addEdit: UIButton!

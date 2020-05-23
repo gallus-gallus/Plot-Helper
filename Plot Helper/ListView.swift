@@ -23,13 +23,14 @@ class ListView: UIViewController {
     }
     @IBOutlet weak var textField: UITextView!
     @IBAction func clearData(_ sender: Any) {
-        let alert = UIAlertController(title: "Are you sure you want to CLEAR ALL SAMPLE DATA?", message: "This action cannot be undone!", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Are you sure you want to CLEAR ALL SAMPLE DATA?", message: "This action cannot be undone! This will also clear all comments.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Clear Data", style: .default, handler: { action in
             print("Clearing data.")
             storage.listOfSamples = []
             storage.listOfPoints = []
             self.textField.text = ""
             let _ = storage.openFileNamed("listSave", type: "w", write: "")
+            let _ = storage.openFileNamed("comments", type: "w", write: "")
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
 
