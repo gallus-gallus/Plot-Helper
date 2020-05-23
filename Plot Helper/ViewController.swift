@@ -99,9 +99,9 @@ class ViewController: UIViewController {
         let currentSamp = currentSample(plot: plot.selectedSegmentIndex+1, direction: direction.selectedSegmentIndex+1, distance: distance.selectedSegmentIndex+1)
         let numberOfPoints: Int? = numberOfPointsIn(sample: currentSamp)
         if numberOfPoints != nil{
-            sampleLabel.text = "\(numberOfPoints!) points in sample"
+            sampleLabel.text = "\(numberOfPoints!) points"
         }else{
-            sampleLabel.text = "0 points in sample"
+            sampleLabel.text = "0 points"
         }
         let currentPoint: Int? = pointExists(at: storage.point(plot: plot.selectedSegmentIndex+1, direction: direction.selectedSegmentIndex+1, distance: distance.selectedSegmentIndex+1, row: row.selectedSegmentIndex+1, column: column.selectedSegmentIndex+1, cover: cover.selectedSegmentIndex+1))
         currentPointIndex = currentPoint
