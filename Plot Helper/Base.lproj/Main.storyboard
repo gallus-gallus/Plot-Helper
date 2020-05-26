@@ -368,15 +368,24 @@
                                     <action selector="sharePressed:" destination="SMI-HK-ONk" eventType="touchUpInside" id="Jkh-td-xTT"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kL1-FN-w93">
+                                <rect key="frame" x="298.5" y="964" width="115" height="30"/>
+                                <state key="normal" title="Share Point Data"/>
+                                <connections>
+                                    <action selector="pointSharePressed:" destination="SMI-HK-ONk" eventType="touchUpInside" id="Qaq-Z5-eya"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="DWh-u8-LM8" firstAttribute="leading" secondItem="0pd-Zi-kKo" secondAttribute="leading" constant="20" id="36X-nB-nBx"/>
                             <constraint firstItem="w3P-S8-NLr" firstAttribute="leading" secondItem="0pd-Zi-kKo" secondAttribute="leading" constant="20" id="6WO-i2-eeR"/>
+                            <constraint firstItem="kL1-FN-w93" firstAttribute="centerX" secondItem="DIt-HT-RWl" secondAttribute="centerX" id="H0N-hO-4Va"/>
                             <constraint firstItem="0pd-Zi-kKo" firstAttribute="bottom" secondItem="TSG-hz-R0k" secondAttribute="bottom" constant="13" id="SNl-tO-cbc"/>
                             <constraint firstItem="0pd-Zi-kKo" firstAttribute="trailing" secondItem="DWh-u8-LM8" secondAttribute="trailing" constant="20" id="Voz-Lo-rMx"/>
                             <constraint firstItem="DWh-u8-LM8" firstAttribute="top" secondItem="0pd-Zi-kKo" secondAttribute="top" constant="20" id="WeS-Ca-p2m"/>
                             <constraint firstItem="0pd-Zi-kKo" firstAttribute="bottom" secondItem="w3P-S8-NLr" secondAttribute="bottom" constant="13" id="Y8J-1i-mHb"/>
+                            <constraint firstItem="0pd-Zi-kKo" firstAttribute="bottom" secondItem="kL1-FN-w93" secondAttribute="bottom" constant="13" id="bK4-kr-rsd"/>
                             <constraint firstItem="0pd-Zi-kKo" firstAttribute="trailing" secondItem="TSG-hz-R0k" secondAttribute="trailing" constant="20" id="ek4-iZ-ttC"/>
                             <constraint firstItem="w3P-S8-NLr" firstAttribute="top" secondItem="DWh-u8-LM8" secondAttribute="bottom" constant="15" id="xdm-AB-ZYS"/>
                         </constraints>

@@ -47,28 +47,18 @@ class ListView: UIViewController {
         self.present(alert, animated: true)
     }
     @IBAction func sharePressed(_ sender: Any) {
-        /*UIApplication.share("Text to share")
-
-        let data = ["Text, Image and url"] as [Any]
-        UIApplication.share(data)*/
-        
-        
-        /*let activityVC = UIActivityViewController(activityItems: [CSVSting], applicationActivities: nil)
-        activityVC.popoverPresentationController?.sourceView = self.view
-        present(activityVC, animated: true, completion: nil)
-        activityVC.completionWithItemsHandler = { (activityType, completed:Bool, returnedItems:[Any]?, error: Error?) in
-
-            if completed  {
-                self.dismiss(animated: true, completion: nil)
-            }
-        }*/
-        
-        
-        /*let shareText = "Hello, world!"
-        let vc = UIActivityViewController(activityItems: [shareText], applicationActivities: [])
-            present(vc, animated: true)*/
-        
         let textToShare = CSVSting
+        let objectsToShare: [Any] = [textToShare]
+        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        activityVC.popoverPresentationController?.sourceView = sender as! UIView
+        self.present(activityVC, animated: true, completion: nil)
+    }
+    @IBAction func pointSharePressed(_ sender: Any) {
+        var string = ""
+        for i in storage.listOfPoints{
+            string += pointToCSVString(point: i)
+        }
+        let textToShare = string
         let objectsToShare: [Any] = [textToShare]
         let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
         activityVC.popoverPresentationController?.sourceView = sender as! UIView
@@ -85,6 +75,9 @@ class ListView: UIViewController {
         var string = ""
         string = "\(sample.plot),\(sample.direction),\(sample.distance),\(sample.coverCheatgrass),\(sample.coverPlant), \(sample.coverLitter), \(sample.coverCheatgrassLitter), \(sample.coverGround)\n"
         return string
+    }
+    func pointToCSVString(point: storage.point) -> String{
+        return "\(point.plot),\(point.direction),\(point.distance),\(point.row),\(point.column),\(point.cover)\n"
     }
     /*
     // MARK: - Navigation
