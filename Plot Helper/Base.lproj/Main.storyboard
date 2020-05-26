@@ -105,9 +105,9 @@
                                                 <rect key="frame" x="17" y="61" width="761" height="32"/>
                                                 <segments>
                                                     <segment title="17m"/>
-                                                    <segment title="40m"/>
+                                                    <segment title="44m"/>
                                                     <segment title="53m"/>
-                                                    <segment title="63m"/>
+                                                    <segment title="68m"/>
                                                     <segment title="71m"/>
                                                 </segments>
                                                 <connections>
@@ -123,15 +123,33 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bar" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O4i-Jo-0m1">
+                                                <rect key="frame" x="509" y="39" width="77" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="77" id="laz-eJ-cIt"/>
+                                                    <constraint firstAttribute="height" constant="22" id="mfL-SV-0NR"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bar" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fgD-ug-NHe">
+                                                <rect key="frame" x="209" y="39" width="77" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="77" id="cX6-ZN-g33"/>
+                                                    <constraint firstAttribute="height" constant="22" id="v6Y-qY-twB"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="fgD-ug-NHe" secondAttribute="bottom" constant="39" id="3BC-8T-ude"/>
+                                            <constraint firstAttribute="trailing" secondItem="O4i-Jo-0m1" secondAttribute="trailing" constant="208" id="Cjx-ad-gzt"/>
                                             <constraint firstItem="3d8-ec-vYg" firstAttribute="centerX" secondItem="eSw-eh-O11" secondAttribute="centerX" id="QLU-ey-tuc"/>
                                             <constraint firstAttribute="bottom" secondItem="XhA-oA-Pob" secondAttribute="bottom" constant="8" id="R3W-KK-t7X"/>
                                             <constraint firstItem="XhA-oA-Pob" firstAttribute="top" secondItem="3d8-ec-vYg" secondAttribute="bottom" constant="20" id="RPk-22-Cjg"/>
+                                            <constraint firstAttribute="bottom" secondItem="O4i-Jo-0m1" secondAttribute="bottom" constant="39" id="YI9-KS-VWZ"/>
                                             <constraint firstItem="XhA-oA-Pob" firstAttribute="leading" secondItem="eSw-eh-O11" secondAttribute="leading" constant="17" id="ep2-95-gdf"/>
                                             <constraint firstAttribute="trailing" secondItem="XhA-oA-Pob" secondAttribute="trailing" constant="16" id="f7G-9E-v12"/>
                                             <constraint firstAttribute="height" constant="100" id="oJk-FH-E4A"/>
+                                            <constraint firstItem="fgD-ug-NHe" firstAttribute="leading" secondItem="eSw-eh-O11" secondAttribute="leading" constant="209" id="zxc-DS-exl"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0xu-se-TXX">
@@ -409,5 +427,6 @@
     <resources>
         <image name="Add" width="900" height="450"/>
         <image name="Get" width="900" height="450"/>
+        <image name="bar" width="300" height="100"/>
     </resources>
 </document>

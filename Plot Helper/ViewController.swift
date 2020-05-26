@@ -265,6 +265,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var direction: UISegmentedControl!
     @IBAction func directionChanged(_ sender: Any) {
         updateOnChange()
+        if (direction.selectedSegmentIndex+1)%2 == 0{
+            distance.setTitle("29m", forSegmentAt: 0)
+        }else{
+            distance.setTitle("17m", forSegmentAt: 0)
+        }
     }
     @IBOutlet weak var distance: UISegmentedControl!
     @IBAction func distanceChanged(_ sender: Any) {
