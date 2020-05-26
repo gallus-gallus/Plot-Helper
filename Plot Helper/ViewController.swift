@@ -49,8 +49,8 @@ class ViewController: UIViewController {
     
     
     func addActions(){
-        updateOnChange()
         if add == true{
+            updateOnChange()
             autoSwitch.isEnabled = true
             addPoint(at: storage.point(plot: plot.selectedSegmentIndex+1, direction: direction.selectedSegmentIndex+1, distance: distance.selectedSegmentIndex+1, row: row.selectedSegmentIndex+1, column: column.selectedSegmentIndex+1, cover: cover.selectedSegmentIndex+1))
             if autoSwitch.isOn == true{
