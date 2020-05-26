@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Plot_Helper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PlotHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -322,7 +322,7 @@
         <!--List View-->
         <scene sceneID="2gg-Xb-t17">
             <objects>
-                <viewController id="SMI-HK-ONk" customClass="ListView" customModule="Plot_Helper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="SMI-HK-ONk" customClass="ListView" customModule="PlotHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DIt-HT-RWl">
                         <rect key="frame" x="0.0" y="0.0" width="712" height="1006.9200564096436"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -335,7 +335,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3P-S8-NLr">
-                                <rect key="frame" x="320" y="957" width="72" height="30"/>
+                                <rect key="frame" x="20" y="964" width="72" height="30"/>
                                 <state key="normal" title="Clear Data">
                                     <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -343,15 +343,24 @@
                                     <action selector="clearData:" destination="SMI-HK-ONk" eventType="touchUpInside" id="yCy-KG-0j2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSG-hz-R0k">
+                                <rect key="frame" x="618" y="964" width="74" height="30"/>
+                                <state key="normal" title="Share CSV"/>
+                                <connections>
+                                    <action selector="sharePressed:" destination="SMI-HK-ONk" eventType="touchUpInside" id="Jkh-td-xTT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="DWh-u8-LM8" firstAttribute="leading" secondItem="0pd-Zi-kKo" secondAttribute="leading" constant="20" id="36X-nB-nBx"/>
-                            <constraint firstItem="w3P-S8-NLr" firstAttribute="top" secondItem="DWh-u8-LM8" secondAttribute="bottom" constant="8" id="Rhj-p0-Z8s"/>
+                            <constraint firstItem="w3P-S8-NLr" firstAttribute="leading" secondItem="0pd-Zi-kKo" secondAttribute="leading" constant="20" id="6WO-i2-eeR"/>
+                            <constraint firstItem="0pd-Zi-kKo" firstAttribute="bottom" secondItem="TSG-hz-R0k" secondAttribute="bottom" constant="13" id="SNl-tO-cbc"/>
                             <constraint firstItem="0pd-Zi-kKo" firstAttribute="trailing" secondItem="DWh-u8-LM8" secondAttribute="trailing" constant="20" id="Voz-Lo-rMx"/>
                             <constraint firstItem="DWh-u8-LM8" firstAttribute="top" secondItem="0pd-Zi-kKo" secondAttribute="top" constant="20" id="WeS-Ca-p2m"/>
-                            <constraint firstItem="w3P-S8-NLr" firstAttribute="centerX" secondItem="DIt-HT-RWl" secondAttribute="centerX" id="gcA-9Z-u56"/>
-                            <constraint firstItem="0pd-Zi-kKo" firstAttribute="bottom" secondItem="w3P-S8-NLr" secondAttribute="bottom" constant="20" id="rzR-72-KzR"/>
+                            <constraint firstItem="0pd-Zi-kKo" firstAttribute="bottom" secondItem="w3P-S8-NLr" secondAttribute="bottom" constant="13" id="Y8J-1i-mHb"/>
+                            <constraint firstItem="0pd-Zi-kKo" firstAttribute="trailing" secondItem="TSG-hz-R0k" secondAttribute="trailing" constant="20" id="ek4-iZ-ttC"/>
+                            <constraint firstItem="w3P-S8-NLr" firstAttribute="top" secondItem="DWh-u8-LM8" secondAttribute="bottom" constant="15" id="xdm-AB-ZYS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0pd-Zi-kKo"/>
                     </view>
@@ -366,7 +375,7 @@
         <!--Comment View-->
         <scene sceneID="DIg-Ur-vJ5">
             <objects>
-                <viewController id="Wjf-zb-s0z" customClass="CommentView" customModule="Plot_Helper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Wjf-zb-s0z" customClass="CommentView" customModule="PlotHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Y2-V9-dm9">
                         <rect key="frame" x="0.0" y="0.0" width="712" height="1006.9200564096436"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -16,6 +16,7 @@ class ListView: UIViewController {
         // Do any additional setup after loading the view.
         
         var masterSting = ""
+        CSVSting = ""
         for i in storage.listOfSamples{
             masterSting += sampleToGoodString(sample: i)
         }
@@ -23,10 +24,13 @@ class ListView: UIViewController {
             masterSting += "\n"
         }
         for i in storage.listOfSamples{
-            masterSting += sampleToCSVString(sample: i)
+            CSVSting += sampleToCSVString(sample: i)
         }
+        masterSting += CSVSting
         textField.text = masterSting
     }
+    var CSVSting = ""
+    
     @IBOutlet weak var textField: UITextView!
     @IBAction func clearData(_ sender: Any) {
         let alert = UIAlertController(title: "Are you sure you want to CLEAR ALL SAMPLE DATA?", message: "This action cannot be undone! This will also clear all comments.", preferredStyle: .alert)
@@ -41,6 +45,34 @@ class ListView: UIViewController {
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
 
         self.present(alert, animated: true)
+    }
+    @IBAction func sharePressed(_ sender: Any) {
+        /*UIApplication.share("Text to share")
+
+        let data = ["Text, Image and url"] as [Any]
+        UIApplication.share(data)*/
+        
+        
+        /*let activityVC = UIActivityViewController(activityItems: [CSVSting], applicationActivities: nil)
+        activityVC.popoverPresentationController?.sourceView = self.view
+        present(activityVC, animated: true, completion: nil)
+        activityVC.completionWithItemsHandler = { (activityType, completed:Bool, returnedItems:[Any]?, error: Error?) in
+
+            if completed  {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }*/
+        
+        
+        /*let shareText = "Hello, world!"
+        let vc = UIActivityViewController(activityItems: [shareText], applicationActivities: [])
+            present(vc, animated: true)*/
+        
+        let textToShare = CSVSting
+        let objectsToShare: [Any] = [textToShare]
+        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        activityVC.popoverPresentationController?.sourceView = sender as! UIView
+        self.present(activityVC, animated: true, completion: nil)
     }
     
     func sampleToGoodString(sample: storage.sample) -> String{
