@@ -224,10 +224,10 @@
                                                 <rect key="frame" x="8" y="60" width="737" height="32"/>
                                                 <segments>
                                                     <segment title="Cheatgrass"/>
-                                                    <segment title="Other Plants"/>
-                                                    <segment title="Litter"/>
                                                     <segment title="Cheatgrass Litter"/>
-                                                    <segment title="Bare Soil"/>
+                                                    <segment title="Bare Ground"/>
+                                                    <segment title="Other Litter"/>
+                                                    <segment title="Other Plants"/>
                                                 </segments>
                                                 <connections>
                                                     <action selector="coverChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="eZj-CC-Lxr"/>

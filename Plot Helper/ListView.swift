@@ -68,12 +68,12 @@ class ListView: UIViewController {
     func sampleToGoodString(sample: storage.sample) -> String{
         var string = ""
         let directions = ["N","NE","E","SE","S","SW","W","NW"]
-        string = "Plot \(sample.plot), direction \(directions[sample.direction-1]), distance \(sample.distance), with \(sample.coverCheatgrass) cheatgrass, \(sample.coverPlant) other plants, \(sample.coverLitter) litter, \(sample.coverCheatgrassLitter) cheatgrass litter, \(sample.coverGround) ground.\n"
+        string = "Plot \(sample.plot), direction \(directions[sample.direction-1]), distance \(sample.distance), with \(sample.coverCheatgrass) cheatgrass, \(sample.coverCheatgrassLitter) cheatgrass litter, \(sample.coverGround) ground, \(sample.coverLitter) litter, \(sample.coverPlant) other plants.\n"
         return string
     }
     func sampleToCSVString(sample: storage.sample) -> String{
         var string = ""
-        string = "\(sample.plot),\(sample.direction),\(sample.distance),\(sample.coverCheatgrass),\(sample.coverPlant), \(sample.coverLitter), \(sample.coverCheatgrassLitter), \(sample.coverGround)\n"
+        string = "\(sample.plot),\(sample.direction),\(sample.distance),\(sample.coverCheatgrass),\(sample.coverCheatgrassLitter),\(sample.coverGround),\(sample.coverLitter),\(sample.coverPlant)\n"
         return string
     }
     func pointToCSVString(point: storage.point) -> String{

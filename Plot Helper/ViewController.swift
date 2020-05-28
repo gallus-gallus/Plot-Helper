@@ -93,7 +93,7 @@ class ViewController: UIViewController {
         }
     }
     func currentSample(plot: Int, direction: Int, distance: Int) -> storage.sample{
-        return storage.sample(plot: plot, direction: direction, distance: distance, coverCheatgrass: 0, coverPlant: 0, coverLitter: 0, coverCheatgrassLitter: 0, coverGround: 0)
+        return storage.sample(plot: plot, direction: direction, distance: distance, coverCheatgrass: 0, coverCheatgrassLitter: 0, coverGround: 0, coverLitter: 0, coverPlant: 0)
     }
     
     func updateOnChange(){
@@ -190,15 +190,15 @@ class ViewController: UIViewController {
             if matchFound == false{
                 let coverType = i.cover
                 if coverType == 1{
-                    sampleList.append(storage.sample(plot: i.plot, direction: i.direction, distance: i.distance, coverCheatgrass: 1, coverPlant: 0, coverLitter: 0, coverCheatgrassLitter: 0, coverGround: 0))
+                    sampleList.append(storage.sample(plot: i.plot, direction: i.direction, distance: i.distance, coverCheatgrass: 1, coverCheatgrassLitter: 0, coverGround: 0, coverLitter: 0, coverPlant: 0))
                 }else if coverType == 2{
-                    sampleList.append(storage.sample(plot: i.plot, direction: i.direction, distance: i.distance, coverCheatgrass: 0, coverPlant: 1, coverLitter: 0, coverCheatgrassLitter: 0, coverGround: 0))
+                    sampleList.append(storage.sample(plot: i.plot, direction: i.direction, distance: i.distance, coverCheatgrass: 0, coverCheatgrassLitter: 1, coverGround: 0, coverLitter: 0, coverPlant: 0))
                 }else if coverType == 3{
-                    sampleList.append(storage.sample(plot: i.plot, direction: i.direction, distance: i.distance, coverCheatgrass: 0, coverPlant: 0, coverLitter: 1, coverCheatgrassLitter: 0, coverGround: 0))
+                    sampleList.append(storage.sample(plot: i.plot, direction: i.direction, distance: i.distance, coverCheatgrass: 0, coverCheatgrassLitter: 0, coverGround: 1, coverLitter: 0, coverPlant: 0))
                 }else if coverType == 4{
-                    sampleList.append(storage.sample(plot: i.plot, direction: i.direction, distance: i.distance, coverCheatgrass: 0, coverPlant: 0, coverLitter: 0, coverCheatgrassLitter: 1, coverGround: 0))
+                    sampleList.append(storage.sample(plot: i.plot, direction: i.direction, distance: i.distance, coverCheatgrass: 0, coverCheatgrassLitter: 0, coverGround: 0, coverLitter: 1, coverPlant: 0))
                 }else if coverType == 5{
-                    sampleList.append(storage.sample(plot: i.plot, direction: i.direction, distance: i.distance, coverCheatgrass: 0, coverPlant: 0, coverLitter: 0, coverCheatgrassLitter: 0, coverGround: 1))
+                    sampleList.append(storage.sample(plot: i.plot, direction: i.direction, distance: i.distance, coverCheatgrass: 0, coverCheatgrassLitter: 0, coverGround: 0, coverLitter: 0, coverPlant: 1))
                 }
             }
             matchFound = false
@@ -261,6 +261,12 @@ class ViewController: UIViewController {
         }
         return listOfStrings
     }
+    
+    // MARK: - Overrides
+    
+    /*override func viewDidDisappear(_ animated: Bool) {
+        updateOnChange()
+    }*/
     
     // MARK: - Connections and actions
     

@@ -24,10 +24,10 @@ class storage: NSObject {
         var direction: Int
         var distance: Int
         var coverCheatgrass: Int
-        var coverPlant: Int
-        var coverLitter: Int
         var coverCheatgrassLitter: Int
         var coverGround: Int
+        var coverLitter: Int
+        var coverPlant: Int
     }
     static var listOfPoints = [point]()
     static var listOfSamples = [sample]()
