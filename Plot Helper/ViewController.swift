@@ -180,10 +180,10 @@ class ViewController: UIViewController {
                     matchFound = true
                     let coverType = i.cover
                     if coverType == 1{sampleList[jCount].coverCheatgrass += 1}
-                    if coverType == 2{sampleList[jCount].coverPlant += 1}
-                    if coverType == 3{sampleList[jCount].coverLitter += 1}
-                    if coverType == 4{sampleList[jCount].coverCheatgrassLitter += 1}
-                    if coverType == 5{sampleList[jCount].coverGround += 1}
+                    if coverType == 5{sampleList[jCount].coverPlant += 1}
+                    if coverType == 4{sampleList[jCount].coverLitter += 1}
+                    if coverType == 2{sampleList[jCount].coverCheatgrassLitter += 1}
+                    if coverType == 3{sampleList[jCount].coverGround += 1}
                 }
                 jCount += 1
             }
