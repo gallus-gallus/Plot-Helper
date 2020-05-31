@@ -264,10 +264,11 @@ class ViewController: UIViewController {
     
     // MARK: - Overrides
     
-    /*override func viewDidDisappear(_ animated: Bool) {
+    override func dismiss(animated flag: Bool, completion: (() -> Void)?) {
+        super.dismiss(animated: flag, completion: completion)
+
         updateOnChange()
-    }*/
-    
+    }
     // MARK: - Connections and actions
     
     @IBOutlet weak var plot: UISegmentedControl!
