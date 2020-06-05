@@ -16,14 +16,25 @@ class ListView: UIViewController {
         // Do any additional setup after loading the view.
         
         var masterSting = ""
+        var masterList = [storage.sample]()
+        for plot in 1...8{
+            for direction in 1...8{
+                for distance in 1...5{
+                    let sampleExitsNum: Int? = sampleExists(at: storage.sample(plot: plot, direction: direction, distance: distance, coverCheatgrass: 0, coverCheatgrassLitter: 0, coverGround: 0, coverLitter: 0, coverPlant: 0))
+                    if sampleExitsNum != nil{
+                        masterList.append(storage.listOfSamples[sampleExitsNum!])
+                    }
+                }
+            }
+        }
         CSVSting = ""
-        for i in storage.listOfSamples{
+        for i in masterList{
             masterSting += sampleToGoodString(sample: i)
         }
         for _ in 1...5{
             masterSting += "\n"
         }
-        for i in storage.listOfSamples{
+        for i in masterList{
             CSVSting += sampleToCSVString(sample: i)
         }
         masterSting += CSVSting
@@ -79,6 +90,65 @@ class ListView: UIViewController {
     func pointToCSVString(point: storage.point) -> String{
         return "\(point.plot),\(point.direction),\(point.distance),\(point.row),\(point.column),\(point.cover)\n"
     }
+    
+    func sampleExists(at: storage.sample) -> Int?{
+        let sample = at
+        figureSamples()
+        var iterations = 0
+        var match = false
+        for i in storage.listOfSamples{
+            if i.plot == sample.plot && i.direction == sample.direction && i.distance == sample.distance{
+                match = true
+                print("Found sample at plot \(iterations).")
+                return iterations
+            }
+            iterations += 1
+        }
+        if match == false{
+            return nil
+        }
+    }
+    func figureSamples(){
+        var sampleList = [storage.sample]()
+        var iCount = 0
+        var jCount = 0
+        var matchFound = false
+        for i in storage.listOfPoints{
+            for j in sampleList{
+                if i.plot == j.plot && i.direction == j.direction && i.distance == j.distance{
+                    matchFound = true
+                    let coverType = i.cover
+                    if coverType == 1{sampleList[jCount].coverCheatgrass += 1}
+                    if coverType == 5{sampleList[jCount].coverPlant += 1}
+                    if coverType == 4{sampleList[jCount].coverLitter += 1}
+                    if coverType == 2{sampleList[jCount].coverCheatgrassLitter += 1}
+                    if coverType == 3{sampleList[jCount].coverGround += 1}
+                }
+                jCount += 1
+            }
+            if matchFound == false{
+                let coverType = i.cover
+                if coverType == 1{
+                    sampleList.append(storage.sample(plot: i.plot, direction: i.direction, distance: i.distance, coverCheatgrass: 1, coverCheatgrassLitter: 0, coverGround: 0, coverLitter: 0, coverPlant: 0))
+                }else if coverType == 2{
+                    sampleList.append(storage.sample(plot: i.plot, direction: i.direction, distance: i.distance, coverCheatgrass: 0, coverCheatgrassLitter: 1, coverGround: 0, coverLitter: 0, coverPlant: 0))
+                }else if coverType == 3{
+                    sampleList.append(storage.sample(plot: i.plot, direction: i.direction, distance: i.distance, coverCheatgrass: 0, coverCheatgrassLitter: 0, coverGround: 1, coverLitter: 0, coverPlant: 0))
+                }else if coverType == 4{
+                    sampleList.append(storage.sample(plot: i.plot, direction: i.direction, distance: i.distance, coverCheatgrass: 0, coverCheatgrassLitter: 0, coverGround: 0, coverLitter: 1, coverPlant: 0))
+                }else if coverType == 5{
+                    sampleList.append(storage.sample(plot: i.plot, direction: i.direction, distance: i.distance, coverCheatgrass: 0, coverCheatgrassLitter: 0, coverGround: 0, coverLitter: 0, coverPlant: 1))
+                }
+            }
+            matchFound = false
+            iCount += 1
+            jCount = 0
+        }
+        storage.listOfSamples = sampleList
+        print("Figured Samples")
+        print(sampleList)
+    }
+    
     /*
     // MARK: - Navigation
 
