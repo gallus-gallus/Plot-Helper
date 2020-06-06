@@ -17,6 +17,7 @@ class ListView: UIViewController {
         
         var masterSting = ""
         var masterList = [storage.sample]()
+        figureSamples()
         for plot in 1...8{
             for direction in 1...8{
                 for distance in 1...5{
@@ -93,7 +94,6 @@ class ListView: UIViewController {
     
     func sampleExists(at: storage.sample) -> Int?{
         let sample = at
-        figureSamples()
         var iterations = 0
         var match = false
         for i in storage.listOfSamples{
