@@ -38,14 +38,27 @@ class ViewController: UIViewController {
         print("Added point \(pointToString(point: at)).")
         print("Added point \(pointToGoodString(point: at)).")
     }
+    func addContent(at: storage.contents){
+        storage.listOfContents.append(at)
+        print("Added content \(contentToString(content: at)).")
+        //print("Added content \(contentToGoodString(point: at)).")
+    }
     func pointToString(point: storage.point) -> String{
         let string = "plot \(point.plot), direction \(point.direction), distance \(point.distance), row \(point.row), column \(point.column), cover \(point.cover)"
+        return string
+    }
+    func contentToString(content: storage.contents) -> String{
+        let string = "plot \(content.plot), direction \(content.direction), distance \(content.distance), content \(content.contents)"
         return string
     }
     func pointToGoodString(point: storage.point) -> String{
         let string = "plot \(point.plot), direction \(direction.titleForSegment(at: point.direction-1) ?? "nil"), distance \(distance.titleForSegment(at: point.distance-1) ?? "nil"), row \(point.row), column \(point.column), cover \(cover.titleForSegment(at: point.cover-1) ?? "nil")"
         return string
     }
+    /*func contentToGoodString(content: storage.contents) -> String{
+        let string = "plot \(content.plot), direction \(direction.titleForSegment(at: point.direction-1) ?? "nil"), distance \(distance.titleForSegment(at: point.distance-1) ?? "nil"), row \(point.row), column \(point.column), cover \(cover.titleForSegment(at: point.cover-1) ?? "nil")"
+        return string
+    }*/
     
     
     func addActions(){
@@ -81,6 +94,25 @@ class ViewController: UIViewController {
             return nil
         }
     }
+    
+    func contentExists(at: storage.contents) -> Int?{
+        let content = at
+        var iterations = 0
+        var match = false
+        for i in storage.listOfContents{
+            if i.plot == content.plot && i.direction == content.direction && i.distance == content.distance{
+                match = true
+                print("Found content at plot \(iterations).")
+                return iterations
+            }
+            iterations += 1
+        }
+        if match == false{
+            return nil
+        }
+    }
+
+    
     func numberOfPointsIn(sample: storage.sample) -> Int?{
         if sampleExists(at: sample) != nil{
             let s = storage.listOfSamples[sampleExists(at: sample)!]
