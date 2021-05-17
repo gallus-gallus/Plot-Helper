@@ -172,6 +172,20 @@ class ViewController: UIViewController {
         return nil
     }
     
+    func contentExists(at: storage.point) -> Int?{
+        let content = at
+        var iterations = 0
+        for i in storage.listOfContents{
+            if i.plot == content.plot && i.direction == content.direction && i.distance == content.distance{
+                print("Found point at \(iterations).")
+                return iterations
+            }
+            iterations += 1
+        }
+        print("Point non-exsitant.")
+        return nil
+    }
+    
     func autoStep(){
         updateOnChange()
         if column.selectedSegmentIndex<4{
