@@ -29,8 +29,25 @@ class storage: NSObject {
         var coverLitter: Int
         var coverPlant: Int
     }
+    enum contentTypes {
+        case Default
+        case UnburnedGround
+        case BurnedGround
+        case UnburnedBush
+        case AliveBurnedBush
+        case DeadBurnedBush
+        case ScorchedGround
+        case ScorchedBush
+    }
+    struct contents {
+        var plot: Int
+        var direction: Int
+        var distance: Int
+        var contents: contentTypes
+    }
     static var listOfPoints = [point]()
     static var listOfSamples = [sample]()
+    static var listOfContents = [contents]()
     
     static func openFileNamed(_ fileName: String, type: String, write: String) -> String?{  // Open a file and read or write to it
     // Write "w" to write, adn "r" read in type

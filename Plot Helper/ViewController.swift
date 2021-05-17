@@ -283,6 +283,9 @@ class ViewController: UIViewController {
     @IBAction func distanceChanged(_ sender: Any) {
         updateOnChange()
     }
+    @IBOutlet weak var Content: UISegmentedControl!
+    @IBAction func ContentChanged(_ sender: Any) {
+    }
     @IBOutlet weak var row: UISegmentedControl!
     @IBAction func rowChanged(_ sender: Any) {
         updateOnChange()
