@@ -60,6 +60,17 @@ class ViewController: UIViewController {
         return string
     }*/
     
+    func updateSampleContents(sample: storage.sample, value: storage.contents){
+        print("Updating contents.")
+        let content: Int? = contentExists(at: storage.contents(plot: sample.plot, direction: sample.direction, distance: sample.distance, contents: storage.contentTypes.Default))
+        if content != nil{
+            storage.listOfContents[content!] = value
+            print("Updated existing content.")
+        }else{
+            storage.listOfContents.append(value)
+            print("Added new content")
+        }
+    }
     
     func addActions(){
         if add == true{
@@ -111,6 +122,50 @@ class ViewController: UIViewController {
             return nil
         }
     }
+    
+    func inputToContent(input: Int) -> storage.contentTypes {
+        var value = storage.contentTypes.Default
+        if input == 1{
+            value = storage.contentTypes.Default
+        }else if input == 2{
+            value = storage.contentTypes.UnburnedGround
+        }else if input == 3{
+            value = storage.contentTypes.BurnedGround
+        }else if input == 4{
+            value = storage.contentTypes.UnburnedBush
+        }else if input == 5{
+            value = storage.contentTypes.AliveBurnedBush
+        }else if input == 6{
+            value = storage.contentTypes.DeadBurnedBush
+        }else if input == 7{
+            value = storage.contentTypes.ScorchedGround
+        }else if input == 8{
+            value = storage.contentTypes.ScorchedBush
+        }
+        return value
+    }
+    
+    func contentToInput(input: storage.contentTypes) -> Int {
+        var value = 1
+        if input == storage.contentTypes.Default{
+            value = 1
+        }else if input == storage.contentTypes.UnburnedGround{
+            value = 2
+        }else if input == storage.contentTypes.BurnedGround{
+            value = 3
+        }else if input == storage.contentTypes.UnburnedBush{
+            value = 4
+        }else if input == storage.contentTypes.AliveBurnedBush{
+            value = 5
+        }else if input == storage.contentTypes.DeadBurnedBush{
+            value = 6
+        }else if input == storage.contentTypes.ScorchedGround{
+            value = 7
+        }else if input == storage.contentTypes.ScorchedBush{
+            value = 8
+        }
+        return value
+    }
 
     
     func numberOfPointsIn(sample: storage.sample) -> Int?{
@@ -147,6 +202,13 @@ class ViewController: UIViewController {
             addEdit.setImage(UIImage(named: "Add"), for: .normal)
             add = true
         }
+        let currentContent = contentExists(at: storage.contents(plot: currentSamp.plot, direction: currentSamp.direction, distance: currentSamp.distance, contents: storage.contentTypes.Default))
+        if currentContent != nil{
+            print("Current content is \(currentContent ?? -999)")
+            Content.selectedSegmentIndex = contentToInput(input: storage.listOfContents[currentContent!].contents)-1
+        }else{
+            Content.selectedSegmentIndex = 0
+        }
         if shouldWrite == true{
             let _ = storage.openFileNamed("listSave", type: "w", write: codeList())
         }
@@ -156,6 +218,7 @@ class ViewController: UIViewController {
         }else{
             distance.setTitle("17m", forSegmentAt: 0)
         }
+        updateSampleContents(sample: currentSamp, value: storage.contents(plot: currentSamp.plot, direction: currentSamp.direction, distance: currentSamp.distance, contents: inputToContent(input: Content.selectedSegmentIndex+1)))
     }
     
     func pointExists(at: storage.point) -> Int?{
@@ -342,7 +405,7 @@ class ViewController: UIViewController {
     }
     @IBOutlet weak var cover: UISegmentedControl!
     @IBAction func coverChanged(_ sender: Any) {
-        //updateOnChange()
+        updateOnChange()
     }
     @IBOutlet weak var autoSwitch: UISwitch!
     @IBAction func autoSwitchChanged(_ sender: Any) {
