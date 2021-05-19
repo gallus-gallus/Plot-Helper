@@ -50,6 +50,7 @@ class ListView: UIViewController {
             print("Clearing data.")
             storage.listOfSamples = []
             storage.listOfPoints = []
+            storage.listOfContents = []
             self.textField.text = ""
             let _ = storage.openFileNamed("listSave", type: "w", write: "")
             let _ = storage.openFileNamed("comments", type: "w", write: "")
