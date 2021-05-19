@@ -218,7 +218,7 @@ class ViewController: UIViewController {
         }else{
             distance.setTitle("17m", forSegmentAt: 0)
         }
-        updateSampleContents(sample: currentSamp, value: storage.contents(plot: currentSamp.plot, direction: currentSamp.direction, distance: currentSamp.distance, contents: inputToContent(input: Content.selectedSegmentIndex+1)))
+        /*updateSampleContents(sample: currentSamp, value: storage.contents(plot: currentSamp.plot, direction: currentSamp.direction, distance: currentSamp.distance, contents: inputToContent(input: Content.selectedSegmentIndex+1)))*/
     }
     
     func pointExists(at: storage.point) -> Int?{
@@ -394,6 +394,8 @@ class ViewController: UIViewController {
     }
     @IBOutlet weak var Content: UISegmentedControl!
     @IBAction func ContentChanged(_ sender: Any) {
+        let currentSamp = currentSample(plot: plot.selectedSegmentIndex+1, direction: direction.selectedSegmentIndex+1, distance: distance.selectedSegmentIndex+1)
+        updateSampleContents(sample: currentSamp, value: storage.contents(plot: currentSamp.plot, direction: currentSamp.direction, distance: currentSamp.distance, contents: inputToContent(input: Content.selectedSegmentIndex+1)))
     }
     @IBOutlet weak var row: UISegmentedControl!
     @IBAction func rowChanged(_ sender: Any) {
