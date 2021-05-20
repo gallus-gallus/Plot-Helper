@@ -22,9 +22,25 @@ class CheckView: UIViewController {
         var string = ""
         var iterations = 1
         for i in plotList{
-            string += "Plot \(iterations) contains \(i) point samples.\n"
+            string += "Plot \(iterations) contains \(i) point samples (out of 1000).\n"
             iterations += 1
         }
+        print(string)
+        
+        for _ in 1...5{
+            string += "\n"
+        }
+        
+        plotList = [0,0,0,0,0,0,0,0]
+        for i in storage.listOfContents{
+            plotList[i.plot-1]+=1
+        }
+        iterations = 1
+        for i in plotList{
+            string += "Plot \(iterations) contains \(i) contents (out of 40).\n"
+            iterations += 1
+        }
+        
         print(string)
         textWindow.text = string
     }
