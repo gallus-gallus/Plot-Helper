@@ -18,6 +18,7 @@
 		F489C70D24744777009C8C1B /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489C70C24744777009C8C1B /* ListView.swift */; };
 		F489C70F24744787009C8C1B /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489C70E24744787009C8C1B /* CommentView.swift */; };
 		F48D37052656CEA700285FBB /* contentSave in Resources */ = {isa = PBXBuildFile; fileRef = F48D37042656CEA700285FBB /* contentSave */; };
+		F48D370C2656D64300285FBB /* CheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48D370B2656D64300285FBB /* CheckView.swift */; };
 		F4F264C42472FD1C00301267 /* storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F264C32472FD1C00301267 /* storage.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		F489C70C24744777009C8C1B /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		F489C70E24744787009C8C1B /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		F48D37042656CEA700285FBB /* contentSave */ = {isa = PBXFileReference; lastKnownFileType = text; path = contentSave; sourceTree = "<group>"; };
+		F48D370B2656D64300285FBB /* CheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckView.swift; sourceTree = "<group>"; };
 		F4F264C32472FD1C00301267 /* storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = storage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,6 +73,7 @@
 				F469EAB5246F025C00ED00D0 /* AppDelegate.swift */,
 				F469EAB7246F025C00ED00D0 /* SceneDelegate.swift */,
 				F469EAB9246F025C00ED00D0 /* ViewController.swift */,
+				F48D370B2656D64300285FBB /* CheckView.swift */,
 				F48D37042656CEA700285FBB /* contentSave */,
 				F438006324799AC800136EC7 /* listSave */,
 				F469EABB246F025C00ED00D0 /* Main.storyboard */,
@@ -160,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F489C70F24744787009C8C1B /* CommentView.swift in Sources */,
+				F48D370C2656D64300285FBB /* CheckView.swift in Sources */,
 				F469EABA246F025C00ED00D0 /* ViewController.swift in Sources */,
 				F4F264C42472FD1C00301267 /* storage.swift in Sources */,
 				F489C70D24744777009C8C1B /* ListView.swift in Sources */,

@@ -344,12 +344,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5I-ej-Zqb">
+                                <rect key="frame" x="395" y="985" width="44" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="hqf-P4-ovx"/>
+                                    <constraint firstAttribute="width" constant="44" id="tBL-f1-tT0"/>
+                                </constraints>
+                                <state key="normal" title="Check"/>
+                                <connections>
+                                    <segue destination="eK9-Q8-WKc" kind="presentation" id="dxr-ay-d2U"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0v1-P9-IHI" secondAttribute="bottom" constant="20" id="460-J0-YKa"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eGc-cN-bKp" secondAttribute="trailing" constant="20" id="IA4-LM-cGl"/>
+                            <constraint firstItem="Zuv-62-8Go" firstAttribute="top" secondItem="d5I-ej-Zqb" secondAttribute="bottom" constant="63" id="V66-2L-Mc6"/>
                             <constraint firstItem="0v1-P9-IHI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ZvL-nu-15F"/>
                             <constraint firstItem="Zuv-62-8Go" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aaR-6O-iab"/>
                             <constraint firstItem="gCx-ll-bxN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="bcD-B2-dqy"/>
@@ -362,6 +374,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gCx-ll-bxN" secondAttribute="trailing" constant="20" id="rXJ-zJ-56p"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eGc-cN-bKp" secondAttribute="bottom" constant="20" id="s4d-so-ZSU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gCx-ll-bxN" secondAttribute="bottom" constant="175" id="vHI-wP-bV5"/>
+                            <constraint firstItem="d5I-ej-Zqb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xrH-HU-sWZ"/>
                         </constraints>
                     </view>
                     <connections>
@@ -380,6 +393,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138.12949640287772" y="109.54773869346734"/>
+        </scene>
+        <!--Check View-->
+        <scene sceneID="p6h-MW-mLh">
+            <objects>
+                <viewController id="eK9-Q8-WKc" customClass="CheckView" customModule="PlotHelper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1ee-D8-MD8">
+                        <rect key="frame" x="0.0" y="0.0" width="704" height="995.5"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eUM-iK-R1D">
+                                <rect key="frame" x="20" y="20" width="664" height="955.5"/>
+                                <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="AIC-92-MPc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eUM-iK-R1D" firstAttribute="leading" secondItem="AIC-92-MPc" secondAttribute="leading" constant="20" id="Hu4-nN-ttc"/>
+                            <constraint firstItem="AIC-92-MPc" firstAttribute="trailing" secondItem="eUM-iK-R1D" secondAttribute="trailing" constant="20" id="eKu-ai-AE7"/>
+                            <constraint firstItem="eUM-iK-R1D" firstAttribute="top" secondItem="AIC-92-MPc" secondAttribute="top" constant="20" id="hCX-xi-wAg"/>
+                            <constraint firstItem="AIC-92-MPc" firstAttribute="bottom" secondItem="eUM-iK-R1D" secondAttribute="bottom" constant="20" id="x4Y-jq-V57"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textWindow" destination="eUM-iK-R1D" id="obb-mw-KLb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Zo-bZ-4Ai" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="839"/>
         </scene>
         <!--List View-->
         <scene sceneID="2gg-Xb-t17">
