@@ -16,10 +16,19 @@ class ViewController: UIViewController {
         //let _ = storage.openFileNamed("listSave", type: "w", write: "1,1,1,1,1,3,!")
         let decodedListString = storage.openFileNamed("listSave", type: "r", write: "") ?? ""
         print("Read code \(decodedListString)")
+        let decodedContentListString = storage.openFileNamed("contentSave", type: "r", write: "") ?? ""
+        print("Read code \(decodedContentListString)")
         if decodedListString != ""{
             let decodedList = decodeList(string: decodedListString)
             storage.listOfPoints = decodedList
             print(decodedList)
+        }else{
+            
+        }
+        if decodedContentListString != ""{
+            let decodedContentList = decodeContentList(string: decodedContentListString)
+            storage.listOfContents = decodedContentList
+            print(decodedContentList)
         }else{
             
         }
@@ -214,6 +223,7 @@ class ViewController: UIViewController {
         }
         if shouldWrite == true{
             let _ = storage.openFileNamed("listSave", type: "w", write: codeList())
+            let _ = storage.openFileNamed("contentSave", type: "w", write: codeContentList())
         }
         
         if (direction.selectedSegmentIndex+1)%2 == 0{
