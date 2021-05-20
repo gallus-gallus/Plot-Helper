@@ -336,6 +336,19 @@ class ViewController: UIViewController {
         return string
     }
     
+    func codeContentList() -> String{
+        var string = ""
+        if storage.listOfContents.count > 0 {
+            for i in storage.listOfContents{
+                string += "\(i.plot),\(i.direction),\(i.distance),\(contentToInput(input: i.contents)),!"
+            }
+        }else{
+            string = ""
+        }
+        print("Generated content code: \(string)")
+        return string
+    }
+    
     func decodeList(string: String) -> [storage.point]{
         var storageString = ""
         var listOfStrings = [storage.point]()
@@ -368,6 +381,38 @@ class ViewController: UIViewController {
             }else if i == "!"{
                 currentInfo = 1
                 listOfStrings.append(storage.point(plot: storePlot, direction: storeDirection, distance: storeDistance, row: storeRow, column: storeColumn, cover: storeCover))
+                storageString = ""
+            }
+        }
+        return listOfStrings
+    }
+    
+    func decodeContentList(string: String) -> [storage.contents]{
+        var storageString = ""
+        var listOfStrings = [storage.contents]()
+        var currentInfo = 1
+        var storePlot = 0
+        var storeDirection = 0
+        var storeDistance = 0
+        var storeCover = storage.contentTypes.Default
+        for i in string{
+            if i != "," && i != "!"{
+                storageString += String(i)
+            }else if i == ","{
+                if currentInfo == 1{
+                    storePlot = Int(storageString)!
+                }else if currentInfo == 2{
+                    storeDirection = Int(storageString)!
+                }else if currentInfo == 3{
+                    storeDistance = Int(storageString)!
+                }else if currentInfo == 4{
+                    storeCover = inputToContent(input: Int(storageString)!)
+                }
+                currentInfo += 1
+                storageString = ""
+            }else if i == "!"{
+                currentInfo = 1
+                listOfStrings.append(storage.contents(plot: storePlot, direction: storeDirection, distance: storeDistance, contents: storeCover))
                 storageString = ""
             }
         }
