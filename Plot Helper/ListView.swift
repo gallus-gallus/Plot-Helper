@@ -96,6 +96,12 @@ class ListView: UIViewController {
         for i in storage.listOfPoints{
             string += pointToCSVString(point: i)
         }
+        for _ in 1...5{
+            string += "\n"
+        }
+        for i in storage.listOfContents{
+            string += contentToCSVString(content: i)
+        }
         let textToShare = string
         let objectsToShare: [Any] = [textToShare]
         let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
