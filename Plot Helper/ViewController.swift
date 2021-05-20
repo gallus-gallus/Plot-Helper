@@ -86,6 +86,8 @@ class ViewController: UIViewController {
             storage.listOfPoints[currentPoint!].cover = cover.selectedSegmentIndex+1
             updateOnChange()
         }
+        let currentSamp = currentSample(plot: plot.selectedSegmentIndex+1, direction: direction.selectedSegmentIndex+1, distance: distance.selectedSegmentIndex+1)
+        updateSampleContents(sample: currentSamp, value: storage.contents(plot: currentSamp.plot, direction: currentSamp.direction, distance: currentSamp.distance, contents: inputToContent(input: Content.selectedSegmentIndex+1)))
     }
     
     func sampleExists(at: storage.sample) -> Int?{
@@ -206,6 +208,7 @@ class ViewController: UIViewController {
         if currentContent != nil{
             print("Current content is \(currentContent ?? -999)")
             Content.selectedSegmentIndex = contentToInput(input: storage.listOfContents[currentContent!].contents)-1
+            print("Content type is \(contentToInput(input: storage.listOfContents[currentContent!].contents))")
         }else{
             Content.selectedSegmentIndex = 0
         }
