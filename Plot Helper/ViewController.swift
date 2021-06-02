@@ -465,7 +465,7 @@ class ViewController: UIViewController {
     }
     @IBOutlet weak var cover: UISegmentedControl!
     @IBAction func coverChanged(_ sender: Any) {
-        updateOnChange()
+        //updateOnChange()
     }
     @IBOutlet weak var autoSwitch: UISwitch!
     @IBAction func autoSwitchChanged(_ sender: Any) {
