@@ -140,6 +140,8 @@ class ListView: UIViewController {
             value = 7
         }else if content.contents == storage.contentTypes.ScorchedBush{
             value = 8
+        }else if content.contents == storage.contentTypes.Tree{
+            value = 9
         }
         string = "\(content.plot),\(content.direction),\(content.distance),\(value)\n"
         return string
@@ -164,6 +166,8 @@ class ListView: UIViewController {
             value = "Scorched Ground"
         }else if content.contents == storage.contentTypes.ScorchedBush{
             value = "Scorched Bush"
+        }else if content.contents == storage.contentTypes.Tree{
+            value = "Tree"
         }
         string = "Plot \(content.plot), direction \(content.direction), distance \(content.distance) contains \(value).\n"
         return string

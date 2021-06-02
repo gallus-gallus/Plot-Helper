@@ -38,6 +38,7 @@ class storage: NSObject {
         case DeadBurnedBush
         case ScorchedGround
         case ScorchedBush
+        case Tree
     }
     struct contents {
         var plot: Int

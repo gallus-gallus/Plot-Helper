@@ -152,6 +152,8 @@ class ViewController: UIViewController {
             value = storage.contentTypes.ScorchedGround
         }else if input == 8{
             value = storage.contentTypes.ScorchedBush
+        }else if input == 9{
+            value = storage.contentTypes.Tree
         }
         return value
     }
@@ -174,6 +176,8 @@ class ViewController: UIViewController {
             value = 7
         }else if input == storage.contentTypes.ScorchedBush{
             value = 8
+        }else if input == storage.contentTypes.Tree{
+            value = 9
         }
         return value
     }

@@ -168,6 +168,7 @@
                                                     <segment title="DBB"/>
                                                     <segment title="Sco G"/>
                                                     <segment title="Sco B"/>
+                                                    <segment title="Tree"/>
                                                 </segments>
                                                 <connections>
                                                     <action selector="ContentChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Oi5-ZZ-ZcB"/>
