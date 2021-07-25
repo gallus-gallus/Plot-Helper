@@ -15,6 +15,7 @@
 		F469EABD246F025C00ED00D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F469EABB246F025C00ED00D0 /* Main.storyboard */; };
 		F469EABF246F026000ED00D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F469EABE246F026000ED00D0 /* Assets.xcassets */; };
 		F469EAC2246F026000ED00D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F469EAC0246F026000ED00D0 /* LaunchScreen.storyboard */; };
+		F47AEE2E26ACE4740077E15E /* dataToLoad.txt in Resources */ = {isa = PBXBuildFile; fileRef = F47AEE2D26ACE4740077E15E /* dataToLoad.txt */; };
 		F489C70D24744777009C8C1B /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489C70C24744777009C8C1B /* ListView.swift */; };
 		F489C70F24744787009C8C1B /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F489C70E24744787009C8C1B /* CommentView.swift */; };
 		F48D37052656CEA700285FBB /* contentSave in Resources */ = {isa = PBXBuildFile; fileRef = F48D37042656CEA700285FBB /* contentSave */; };
@@ -33,6 +34,7 @@
 		F469EABE246F026000ED00D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F469EAC1246F026000ED00D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F469EAC3246F026000ED00D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F47AEE2D26ACE4740077E15E /* dataToLoad.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = dataToLoad.txt; sourceTree = "<group>"; };
 		F489C70C24744777009C8C1B /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		F489C70E24744787009C8C1B /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		F48D37042656CEA700285FBB /* contentSave */ = {isa = PBXFileReference; lastKnownFileType = text; path = contentSave; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				F469EAB5246F025C00ED00D0 /* AppDelegate.swift */,
 				F469EAB7246F025C00ED00D0 /* SceneDelegate.swift */,
 				F469EAB9246F025C00ED00D0 /* ViewController.swift */,
+				F47AEE2D26ACE4740077E15E /* dataToLoad.txt */,
 				F48D370B2656D64300285FBB /* CheckView.swift */,
 				F48D37042656CEA700285FBB /* contentSave */,
 				F438006324799AC800136EC7 /* listSave */,
@@ -148,6 +151,7 @@
 			files = (
 				F469EAC2246F026000ED00D0 /* LaunchScreen.storyboard in Resources */,
 				F469EABF246F026000ED00D0 /* Assets.xcassets in Resources */,
+				F47AEE2E26ACE4740077E15E /* dataToLoad.txt in Resources */,
 				F469EABD246F025C00ED00D0 /* Main.storyboard in Resources */,
 				F48D37052656CEA700285FBB /* contentSave in Resources */,
 				F43800682479BCFF00136EC7 /* comments in Resources */,

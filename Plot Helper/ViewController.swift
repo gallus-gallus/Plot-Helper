@@ -35,6 +35,10 @@ class ViewController: UIViewController {
         shouldWrite = false
         updateOnChange()
         shouldWrite = true
+        
+        let dataToLoad = storage.openFileNamed("dataToLoad.txt", type: "r", write: "") ?? "Error"
+        print(dataToLoad)
+        let dataList = readTheCSV(string: dataToLoad)
     }
     // MARK: - Variables
     var shouldWrite = false
@@ -42,6 +46,34 @@ class ViewController: UIViewController {
     var autoSwitchSave = storage.point(plot: 1, direction: 1, distance: 1, row: 1, column: 1, cover: 1)
     var add = true
     // MARK: - Functions
+    func readTheCSV(string: String) -> [[String]]{
+        var inputedData = string
+        inputedData += "\n"
+        var returnList = [[String]]()
+        var sublist = [String]()
+        var tempstring1 = ""
+        var tempstring2 = ""
+        for i in inputedData{
+            if i != "\n"{
+                tempstring1 += String(i)
+            }else{
+                for j in tempstring1{
+                    if j != ","{
+                        tempstring2 += String(j)
+                    }else{
+                        sublist.append(tempstring2)
+                        tempstring2 = ""
+                    }
+                }
+                returnList.append(sublist)
+                sublist = []
+                tempstring1 = ""
+            }
+        }
+        print(returnList)
+        return returnList
+    }
+    
     func addPoint(at: storage.point){
         storage.listOfPoints.append(at)
         print("Added point \(pointToString(point: at)).")
