@@ -1073,8 +1073,8 @@ class ViewController: UIViewController {
         
         print("Read code \(decodedListString)")
         let dataList = readTheCSV(string: decodedListString)
-        
-        
+        storage.listOfPoints = CSVtoPoint(listIn: dataList)
+        figureSamples()
         
         
         
@@ -1116,6 +1116,17 @@ class ViewController: UIViewController {
         }
         print(returnList)
         return returnList
+    }
+    
+    func CSVtoPoint(listIn: [[String]]) -> [storage.point] {
+        let list = listIn
+        var returnlist = [storage.point]()
+        var temp: storage.point
+        for i in list{
+            temp = storage.point(plot: Int(i[0])!, direction: Int(i[1])!, distance: Int(i[2])!, row: Int(i[3])!, column: Int(i[4])!, cover: Int(i[5])!)
+            returnlist.append(temp)
+        }
+        return returnlist
     }
     
     func addPoint(at: storage.point){
